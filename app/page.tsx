@@ -1,65 +1,127 @@
-import Image from "next/image";
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { ChevronRight, MessageCircle, Sparkles, Heart, Package } from 'lucide-react';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import ReviewsMarquee from '@/components/ReviewsMarquee';
 
 export default function Home() {
+  const [isAnimating, setIsAnimating] = useState(true);
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    setShowWhatsApp(true);
+    const timer = setTimeout(() => {
+      setIsAnimating(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      {/* Main Content - Fades in */}
+      <div
+        className="relative z-10 flex flex-col min-h-screen transition-opacity duration-1000 delay-500"
+        style={{ opacity: isAnimating ? 0 : 1 }}
+      >
+        <Navbar />
+
+        {/* WhatsApp Floating Button */}
+        {showWhatsApp && !isAnimating && (
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://wa.me/919146890521"
             target="_blank"
             rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
+            style={{
+              backgroundColor: '#25D366',
+              animation: 'bounce 2s infinite'
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            <MessageCircle size={26} color="#ffffff" />
+            <style>{`
+              @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+              }
+            `}</style>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        )}
+
+        {/* Hero Section - Modern & Minimal */}
+        <section className="flex-1 flex items-center justify-center px-4 sm:px-6 py-16 sm:py-24">
+          <div className="max-w-4xl mx-auto w-full text-center space-y-10">
+
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in-up">
+              <Sparkles size={16} className="text-[#D4AF37]" />
+              <span className="text-sm font-medium text-gray-700">Handcrafted in India</span>
+            </div>
+
+            {/* Main Title */}
+            <div className="space-y-4 animate-fade-in-up delay-100">
+              <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight" style={{ color: '#8B0000' }}>
+                Made with
+                <span className="text-gradient block sm:inline"> Love</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Authentic craftsmanship. Unique designs. Every piece tells your story.
+              </p>
+            </div>
+
+            {/* Stats - Icon focused */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-lg mx-auto animate-fade-in-up delay-200">
+              <div className="glass-card hover-lift p-4 sm:p-6 rounded-2xl text-center cursor-default">
+                <Heart className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" style={{ color: '#D4AF37' }} fill="#D4AF37" />
+                <p className="text-2xl sm:text-3xl font-black" style={{ color: '#8B0000' }}>500+</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Happy</p>
+              </div>
+              <div className="glass-card hover-lift p-4 sm:p-6 rounded-2xl text-center cursor-default">
+                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" style={{ color: '#8B0000' }} />
+                <p className="text-2xl sm:text-3xl font-black" style={{ color: '#D4AF37' }}>100%</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Handmade</p>
+              </div>
+              <div className="glass-card hover-lift p-4 sm:p-6 rounded-2xl text-center cursor-default">
+                <Package className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" style={{ color: '#D4AF37' }} />
+                <p className="text-2xl sm:text-3xl font-black" style={{ color: '#8B0000' }}>50+</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Designs</p>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in-up delay-300">
+              <Link
+                href="/products"
+                className="btn-primary px-8 py-4 rounded-full font-semibold text-base sm:text-lg text-white text-center inline-flex items-center justify-center gap-2"
+              >
+                Explore Collection
+                <ChevronRight size={20} />
+              </Link>
+              <a
+                href="https://wa.me/919146890521"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-full font-semibold text-base sm:text-lg text-center inline-flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
+                style={{
+                  backgroundColor: '#25D366',
+                  color: 'white',
+                  boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
+                }}
+              >
+                <MessageCircle size={20} />
+                Chat Now
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews Section */}
+        <ReviewsMarquee />
+
+        <Footer />
+      </div>
     </div>
   );
 }
