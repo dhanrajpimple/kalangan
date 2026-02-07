@@ -63,7 +63,7 @@ export default function BackgroundDecor() {
     };
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#FFFDD0]">
+        <div suppressHydrationWarning className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#FFFDD0]">
             {/* Right Image */}
             <div
                 className="absolute right-0 top-0 h-full flex items-center justify-end transition-all duration-1000 ease-in-out"

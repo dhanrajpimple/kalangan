@@ -60,7 +60,7 @@ export default function About() {
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#D4AF37]/20 to-[#8B0000]/20 blur-2xl transform scale-110" />
                                 <img
-                                    src="/images/gemini-generated-image-jz2i7gjz2i7gjz2i-removebg-preview.png"
+                                    src="/jewelry.webp"
                                     alt="Our Craft"
                                     className="relative w-full max-w-sm h-auto drop-shadow-2xl"
                                     style={{ maxHeight: '450px', objectFit: 'contain' }}

@@ -23,6 +23,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Main Content - Fades in */}
       <div
+        suppressHydrationWarning
         className="relative z-10 flex flex-col min-h-screen transition-opacity duration-1000 delay-500"
         style={{ opacity: isAnimating ? 0 : 1 }}
       >
