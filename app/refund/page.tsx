@@ -32,7 +32,7 @@ export default function RefundPolicy() {
                                 2. How to Initiate a Return
                             </h2>
                             <p className="text-gray-700 leading-relaxed">
-                                To return an item, contact us via WhatsApp at +91 9146890521 with a photo of the product and the reason for return. We will provide you with return shipping instructions.
+                                To return an item, contact us via WhatsApp at +91 98332 91030 with a photo of the product and the reason for return. We will provide you with return shipping instructions.
                             </p>
                         </div>
 
@@ -89,7 +89,7 @@ export default function RefundPolicy() {
                                 8. Contact for Issues
                             </h2>
                             <p className="text-gray-700 leading-relaxed">
-                                For any refund or return questions, contact us via WhatsApp at +91 9146890521 or email kalangan@example.com.
+                                For any refund or return questions, contact us via WhatsApp at +91 98332 91030 or email kalangan.crafts@gmail.com.
                             </p>
                         </div>
                     </div>

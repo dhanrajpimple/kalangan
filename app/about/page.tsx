@@ -8,9 +8,7 @@ import ReviewsMarquee from '@/components/ReviewsMarquee';
 
 const FEATURES = [
     { icon: Heart, title: 'Handmade', desc: 'Crafted with love' },
-    { icon: Leaf, title: 'Eco-Friendly', desc: 'Sustainable materials' },
     { icon: Palette, title: 'Customizable', desc: 'Your design, your way' },
-    { icon: Truck, title: 'Fast Delivery', desc: 'Nationwide shipping' },
     { icon: Shield, title: 'Quality', desc: 'Premium materials' },
     { icon: Users, title: '24/7 Support', desc: 'Always here for you' },
 ];
@@ -22,14 +20,51 @@ export default function About() {
         setShowWhatsApp(true);
     }, []);
 
+    // Breadcrumb Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://kalangan.vercel.app"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://kalangan.vercel.app/about"
+            }
+        ]
+    };
+
+    // About Page Schema
+    const aboutSchema = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Kalangan",
+        "description": "कलांगण is a heartfelt handmade gifting brand specializing in wedding frames, nameplates, birthday gifts, customized frames, fridge magnets & keychains.",
+        "url": "https://kalangan.vercel.app/about"
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+            />
             <Navbar />
 
             {/* WhatsApp Floating Button */}
             {showWhatsApp && (
                 <a
-                    href="https://wa.me/919146890521"
+                    href="https://wa.me/919833291030"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
@@ -60,7 +95,7 @@ export default function About() {
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#D4AF37]/20 to-[#8B0000]/20 blur-2xl transform scale-110" />
                                 <img
-                                    src="/jewelry.webp"
+                                    src="/aboutus.webp"
                                     alt="Our Craft"
                                     className="relative w-full max-w-sm h-auto drop-shadow-2xl"
                                     style={{ maxHeight: '450px', objectFit: 'contain' }}
@@ -74,11 +109,19 @@ export default function About() {
                                 Handmade with Heart
                             </h2>
                             <p className="text-gray-600 leading-relaxed">
-                                What started as a passion for traditional craftsmanship has grown into Kalangan — bringing authentic handmade products to your doorstep.
+                                <span className="font-bold text-[#8B0000]">कलांगण</span> is a handmade gifting brand built on creativity, tradition, and personal expression. We create customized frames, fridge magnets, and thoughtful handmade gifts that turn emotions into lasting memories.
                             </p>
                             <p className="text-gray-600 leading-relaxed">
-                                Every piece is created with love, care, and attention to detail using sustainable, eco-friendly materials.
+                               We provide meaningful return gifts for weddings, engagements, housewarmings, festivals, baby showers, haldi-kunku, anniversaries, and other special occasions. Every product is carefully customized to reflect your story and make each gift truly memorable.
                             </p>
+                            <p className="text-gray-600 leading-relaxed">
+                                At कलांगण, we don’t just make gifts. We create keepsakes filled with love, warmth, and artistry, adding a personal touch to every celebration.
+                            </p>
+                            <div className="space-y-2 pt-2">
+                                <p className="flex items-center gap-2 text-gray-700 font-medium">✨ Handmade with love</p>
+                                <p className="flex items-center gap-2 text-gray-700 font-medium">✨ Customized with care</p>
+                                <p className="flex items-center gap-2 text-gray-700 font-medium">✨ Created to be remembered</p>
+                            </div>
 
                             {/* Stats */}
                             <div className="flex gap-8 pt-4">
@@ -99,11 +142,11 @@ export default function About() {
                         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10" style={{ color: '#8B0000' }}>
                             Why Kalangan?
                         </h2>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                             {FEATURES.map((item, idx) => (
                                 <div
                                     key={idx}
-                                    className="glass-card hover-lift rounded-2xl p-5 text-center"
+                                    className="glass-card hover-lift rounded-2xl p-5 text-center w-[150px] sm:w-[180px] md:w-[210px]"
                                 >
                                     <item.icon
                                         size={28}
@@ -128,7 +171,7 @@ export default function About() {
                             Get your personalized piece today. We'll craft something special just for you.
                         </p>
                         <a
-                            href="https://wa.me/919146890521"
+                            href="https://wa.me/919833291030"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105"

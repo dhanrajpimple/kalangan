@@ -113,7 +113,7 @@ export default function Products() {
 
         const items = getSelectedList().map(p => `• ${p.name} x${p.quantity}`).join('\n');
         const msg = `Hi! I'd like to order:\n\n${items}\n\nName: ${formData.name}\nAddress: ${formData.address}`;
-        window.open(`https://wa.me/919146890521?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(`https://wa.me/919833291030?text=${encodeURIComponent(msg)}`, '_blank');
         setShowForm(false);
         setSelectedItems({});
         setFormData({ name: '', address: '' });
@@ -121,14 +121,56 @@ export default function Products() {
 
     const totalSelectedCount = Object.keys(selectedItems).length;
 
+    // Structured Data for SEO
+    const itemListSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": selectedCategory === 'Best Seller' ? "Best Selling Handmade Gifts" : `${selectedCategory} Collection`,
+        "description": "Discover our exquisite collection of handmade wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, and keychains. Premium handcrafted gifts for all occasions.",
+        "itemListElement": products.map((product, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "url": `https://kalangan.vercel.app/products`,
+            "name": product.name,
+            "image": product.image_url
+        }))
+    };
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://kalangan.vercel.app"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Products",
+                "item": "https://kalangan.vercel.app/products"
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <Navbar />
 
             {/* WhatsApp Floating */}
             {showWhatsApp && (
                 <a
-                    href="https://wa.me/919146890521"
+                    href="https://wa.me/919833291030"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-2xl hover:scale-110 transition-all font-inter"
@@ -145,9 +187,9 @@ export default function Products() {
                     {/* Header */}
                     <div className="text-center mb-10 animate-fade-in-up">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-3" style={{ color: '#8B0000' }}>
-                            Our Collection
+                            Handmade Collection
                         </h1>
-                        <p className="text-gray-600">Handcrafted pieces for every occasion</p>
+                        <p className="text-gray-600">Wedding Frames, Nameplates, Birthday Gifts, Customized Frames, Fridge Magnets & Keychains</p>
                     </div>
 
                     {/* Category Pills */}

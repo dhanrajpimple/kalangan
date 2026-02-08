@@ -36,14 +36,45 @@ export default function Contact() {
         setExpandedFaq(expandedFaq === index ? null : index);
     };
 
+    // FAQ Schema for AI Search
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": FAQS.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
+    // Contact Page Schema
+    const contactSchema = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Kalangan",
+        "description": "Get in touch with Kalangan for customized wedding frames, nameplates, birthday gifts, and personalized handmade products. WhatsApp, phone, and email support available.",
+        "url": "https://kalangan.vercel.app/contact"
+    };
+
     return (
         <div className="min-h-screen flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+            />
             <Navbar />
 
             {/* WhatsApp Floating Button */}
             {showWhatsApp && (
                 <a
-                    href="https://wa.me/919146890521"
+                    href="https://wa.me/919833291030"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
@@ -77,7 +108,7 @@ export default function Contact() {
                         </h2>
                         <p className="text-gray-600 mb-6">Fastest response • Usually within minutes</p>
                         <a
-                            href="https://wa.me/919146890521"
+                            href="https://wa.me/919833291030"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105"
@@ -91,7 +122,7 @@ export default function Contact() {
                     {/* Secondary Contact Options */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 animate-fade-in-up delay-200">
                         <a
-                            href="tel:919146890521"
+                            href="tel:919833291030"
                             className="glass-card hover-lift rounded-2xl p-6 flex items-center gap-4"
                         >
                             <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(139, 0, 0, 0.1)' }}>
@@ -99,7 +130,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500">Call us</p>
-                                <p className="font-semibold" style={{ color: '#8B0000' }}>+91 914 689 0521</p>
+                                <p className="font-semibold" style={{ color: '#8B0000' }}>+91 98332 91030</p>
                             </div>
                         </a>
                         <a
@@ -132,14 +163,13 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    {/* Location */}
                     <div className="glass-card rounded-2xl p-6 mb-12 flex items-center gap-4 animate-fade-in-up delay-300">
                         <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(139, 0, 0, 0.1)' }}>
                             <MapPin size={24} style={{ color: '#8B0000' }} />
                         </div>
                         <div>
-                            <p className="font-semibold" style={{ color: '#8B0000' }}>Pune, Maharashtra</p>
-                            <p className="text-sm text-gray-600">Nationwide shipping available</p>
+                            <p className="font-semibold" style={{ color: '#8B0000' }}>Kalyan, Maharashtra</p>
+                            <p className="text-sm text-gray-600 font-medium">✨ Serving & Shipping Pan India ✨</p>
                         </div>
                     </div>
 

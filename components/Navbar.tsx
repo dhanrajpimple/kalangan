@@ -43,7 +43,7 @@ export default function Navbar() {
                             />
                         </div>
                         <span className="text-xl sm:text-2xl font-black tracking-tighter text-[#8B0000]">
-                            KALANGAN
+                            कलांगण
                         </span>
                     </Link>
 

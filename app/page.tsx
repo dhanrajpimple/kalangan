@@ -32,7 +32,7 @@ export default function Home() {
         {/* WhatsApp Floating Button */}
         {showWhatsApp && !isAnimating && (
           <a
-            href="https://wa.me/919146890521"
+            href="https://wa.me/919833291030"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
@@ -56,19 +56,21 @@ export default function Home() {
           <div className="max-w-4xl mx-auto w-full text-center space-y-10">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in-up">
-              <Sparkles size={16} className="text-[#D4AF37]" />
-              <span className="text-sm font-medium text-gray-700">Handcrafted in India</span>
+            <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in-up">
+              <div className="flex items-center gap-2">
+                <Sparkles size={16} className="text-[#D4AF37]" />
+              </div>
+              <span className="text-sm font-semibold text-[#8B0000]">Delivering Pan India 🇮🇳</span>
             </div>
 
             {/* Main Title */}
             <div className="space-y-4 animate-fade-in-up delay-100">
               <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight" style={{ color: '#8B0000' }}>
-                Made with
-                <span className="text-gradient block sm:inline"> Love</span>
+                Handmade Gifts
+                <span className="text-gradient block sm:inline"> & Frames</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Authentic craftsmanship. Unique designs. Every piece tells your story.
+                Wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets & keychains. Handcrafted with love for every occasion.
               </p>
             </div>
 
@@ -101,7 +103,7 @@ export default function Home() {
                 <ChevronRight size={20} />
               </Link>
               <a
-                href="https://wa.me/919146890521"
+                href="https://wa.me/919833291030"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-semibold text-base sm:text-lg text-center inline-flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"

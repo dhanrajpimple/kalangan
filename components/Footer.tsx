@@ -21,14 +21,14 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="space-y-6">
                         <div className="space-y-4">
-                            <h3 className="text-3xl font-black tracking-tighter italic">KALANGAN</h3>
+                            <h3 className="text-3xl font-black tracking-tighter italic">कलांगण</h3>
                             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
                                 Handcrafted excellence for your home. Each piece is a testament to traditional Indian artistry, made with love and precision.
                             </p>
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://instagram.com"
+                                href="https://www.instagram.com/__kalangan_?igsh=cjF6dzJnODlhcjlm"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/10 hover:bg-[#D4AF37] hover:text-[#8B0000] transition-all duration-300 group"
@@ -36,7 +36,7 @@ export default function Footer() {
                                 <Instagram size={18} className="group-hover:scale-110 transition-transform" />
                             </a>
                             <a
-                                href="https://wa.me/919146890521"
+                                href="https://wa.me/919833291030"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/10 hover:bg-[#25D366] transition-all duration-300 group"
@@ -90,7 +90,7 @@ export default function Footer() {
                                 <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
                                     <Phone size={16} />
                                 </div>
-                                <span className="text-sm text-white/70 leading-snug">+91 91468 90521</span>
+                                <span className="text-sm text-white/70 leading-snug">+91 98332 91030</span>
                             </li>
                             <li className="flex items-start gap-3 group">
                                 <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
@@ -102,7 +102,7 @@ export default function Footer() {
                                 <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
                                     <MapPin size={16} />
                                 </div>
-                                <span className="text-sm text-white/70 leading-snug">Pune, Maharashtra, India</span>
+                                <span className="text-sm text-white/70 leading-snug">Kalyan, Maharashtra | Pan India Shipping</span>
                             </li>
                         </ul>
                     </div>
