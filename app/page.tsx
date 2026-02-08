@@ -60,7 +60,7 @@ export default function Home() {
               <div className="flex items-center gap-2">
                 <Sparkles size={16} className="text-[#D4AF37]" />
               </div>
-              <span className="text-sm font-semibold text-[#8B0000]">Delivering Pan India 🇮🇳</span>
+              <span className="text-sm font-semibold text-[#8B0000]">Delivering Pan India</span>
             </div>
 
             {/* Main Title */}
