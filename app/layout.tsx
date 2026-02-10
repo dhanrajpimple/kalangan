@@ -37,37 +37,166 @@ export const metadata: Metadata = {
     'personalized keychains',
     'customized keychains India',
 
-    // Long-tail keywords
+    // Long-tail keywords - Wedding related
     'buy handmade wedding frames online India',
     'customized nameplate for home door',
     'personalized birthday gift ideas India',
     'handcrafted photo frames with names',
     'custom fridge magnets for wedding return gifts',
     'personalized keychains for couples',
+    'where to buy wedding frames online',
+    'best handmade wedding gift frames',
+    'unique wedding gift ideas India',
+    'customized wedding frames with names',
+    'personalized wedding photo frames online',
+    'handmade wedding return gift ideas',
+    'affordable wedding frames online India',
+    'wedding couple frames with names',
+    'customized wedding anniversary frames',
+    'handmade wedding keepsake frames',
 
-    // Location-based
+    // Long-tail keywords - Nameplate related
+    'wooden nameplate for main door',
+    'customized nameplate with family name',
+    'personalized house nameplate online',
+    'handmade nameplate designs India',
+    'buy nameplate for home online',
+    'customized nameplate for office door',
+    'wooden nameplate with LED lights',
+    'personalized nameplate for couples',
+    'handcrafted nameplate for home entrance',
+    'unique nameplate designs for home',
+
+    // Long-tail keywords - Birthday related
+    'unique birthday gift ideas for best friend',
+    'personalized birthday gifts for girlfriend',
+    'handmade birthday gifts for boyfriend',
+    'customized birthday photo frames',
+    'personalized birthday keychains online',
+    'handmade birthday return gifts',
+    'unique birthday gift for wife',
+    'customized birthday gifts for husband',
+    'personalized birthday fridge magnets',
+    'handcrafted birthday gift items',
+
+    // Long-tail keywords - Customization related
+    'how to order customized photo frames',
+    'personalized gifts with names and photos',
+    'custom made photo frames online India',
+    'handmade personalized gifts for couples',
+    'customized gifts for all occasions',
+    'personalized photo frames for anniversary',
+    'custom name frames online',
+    'handcrafted personalized keepsakes',
+
+    // Long-tail keywords - Fridge magnets
+    'customized fridge magnets for wedding',
+    'personalized fridge magnets with photos',
+    'handmade fridge magnets for return gifts',
+    'custom fridge magnets for baby shower',
+    'unique fridge magnet designs India',
+    'personalized refrigerator magnets online',
+    'handcrafted fridge magnets for events',
+
+    // Long-tail keywords - Keychains
+    'personalized keychains for couples online',
+    'customized keychains with names',
+    'handmade keychains for return gifts',
+    'unique keychain designs India',
+    'personalized photo keychains online',
+    'custom keychains for wedding favors',
+    'handcrafted keychains for gifts',
+
+    // Location-based long-tail
     'handmade gifts Mumbai Maharashtra',
     'customized frames Mumbai',
     'personalized gifts Pan India delivery',
+    'handmade gift shop in Mumbai',
+    'customized frames delivery all over India',
+    'personalized gifts Mumbai to Delhi',
+    'handcrafted items Pan India shipping',
+    'best handmade gift store Mumbai',
+    'customized gifts online India free shipping',
 
-    // Occasion-based
+    // Occasion-based long-tail
     'wedding return gifts',
     'anniversary gift ideas',
     'housewarming gifts',
     'engagement gifts',
     'baby shower return gifts',
+    'unique return gifts for wedding guests',
+    'personalized anniversary gifts for parents',
+    'handmade housewarming gift ideas',
+    'customized engagement return gifts',
+    'baby shower return gift ideas India',
+    'birthday return gifts for kids',
+    'personalized gifts for Diwali',
+    'handmade gifts for Valentine Day',
+    'customized gifts for Mother Day',
+    'personalized Father Day gift ideas',
+    'handcrafted gifts for Raksha Bandhan',
+    'wedding anniversary gifts for couple',
+    'haldi kunku return gifts',
+    'griha pravesh gift ideas',
+
+    // Question-based long-tail keywords
+    'what are the best handmade gift ideas',
+    'where to buy customized frames online',
+    'how to order personalized wedding frames',
+    'which is the best handmade gift shop',
+    'what to gift for wedding anniversary',
+    'where to get customized nameplates',
+    'how much do customized frames cost',
+    'what are unique birthday gift ideas',
 
     // Hindi/Marathi keywords
     'हस्तनिर्मित उपहार',
     'कस्टमाइज्ड फ्रेम',
     'हाथ से बनाया गया',
+    'शादी के लिए हस्तनिर्मित फ्रेम',
+    'नाम की तख्ती',
+    'व्यक्तिगत उपहार',
 
     // General craft keywords
     'handmade crafts India',
     'artisan gifts online',
     'handcrafted home decor',
     'personalized gift shop',
-    'custom made gifts India'
+    'custom made gifts India',
+    'handmade gift items online',
+    'artisan crafted gifts India',
+    'handcrafted personalized items',
+    'unique handmade gifts online',
+    'custom gift shop near me',
+
+    // Price and quality related
+    'affordable handmade gifts India',
+    'premium customized frames online',
+    'best quality personalized gifts',
+    'cheap customized keychains India',
+    'luxury handmade gift items',
+    'budget friendly personalized gifts',
+
+    // Material specific
+    'wooden photo frames customized',
+    'acrylic nameplate designs',
+    'resin fridge magnets handmade',
+    'metal keychains personalized',
+    'wooden handmade gifts India',
+
+    // Bulk order related
+    'bulk order customized gifts',
+    'wholesale handmade return gifts',
+    'bulk wedding return gifts India',
+    'corporate gifting handmade items',
+    'bulk personalized keychains',
+
+    // Trending searches
+    'trending gift ideas 2024',
+    'viral handmade gifts India',
+    'Instagram worthy personalized gifts',
+    'aesthetic handmade frames',
+    'boho style customized gifts'
   ],
   authors: [{ name: 'Kalangan' }],
   creator: 'Kalangan',

@@ -48,10 +48,8 @@ export default function Home() {
 
             {/* Badge */}
             <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in-up">
-              <div className="flex items-center gap-2">
-                <Sparkles size={16} className="text-[#D4AF37]" />
-              </div>
-              <span className="text-sm font-semibold text-[#8B0000]">Delivering Pan India</span>
+              
+              <span className="text-sm font-semibold text-[#8B0000]">Made with Love, Delivered Across India</span>
             </div>
 
             {/* Main Title */}
@@ -61,7 +59,7 @@ export default function Home() {
                 <span className="text-gradient block sm:inline"> & Frames</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets & keychains. Handcrafted with love for every occasion.
+                Wedding frames, Customized nameplates, Birthday gifts, Personalized photo frames, Fridge magnets & Keychains. Handcrafted with love for every occasion.
               </p>
             </div>
 

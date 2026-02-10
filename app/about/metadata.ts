@@ -16,7 +16,28 @@ export const metadata: Metadata = {
         'personalized gift service',
         'handmade return gifts',
         'कलांगण',
-        'हस्तनिर्मित उपहार ब्रांड'
+        'हस्तनिर्मित उपहार ब्रांड',
+
+        // About page specific long-tail
+        'who makes handmade wedding frames in India',
+        'best handmade gift brand Mumbai',
+        'trusted customized frame seller India',
+        'authentic handcrafted gifts Mumbai Maharashtra',
+        'story behind Kalangan handmade gifts',
+        'why choose handmade gifts over machine made',
+        'benefits of personalized handcrafted gifts',
+        'local artisan gift makers Mumbai',
+        'handmade gift business in Maharashtra',
+        'Indian handcrafted gift brands',
+        'personalized gift company Pan India',
+        'handmade wedding frame artisans India',
+        'customized nameplate makers Mumbai',
+        'best handcrafted gift service India',
+        'quality handmade gifts Mumbai',
+        'experienced personalized gift makers',
+        'handmade gift brand with Pan India delivery',
+        'Mumbai based handcrafted gift company',
+        'artisan made personalized gifts India'
     ],
     openGraph: {
         title: 'About Kalangan | Premium Handmade Gifts & Customized Frames',
