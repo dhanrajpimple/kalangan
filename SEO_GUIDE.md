@@ -36,7 +36,7 @@ Keywords in multiple languages:
 - **Brand Name**: कलांगण (Kalangan)
 
 ### 4. Location-Based SEO
-- Primary Location: Kalyan, Maharashtra
+- Primary Location: Mumbai, Maharashtra
 - Service Area: Pan India
 - Geo-coordinates included in schema
 - Location-specific keywords for Mumbai, Thane, Pune regions
@@ -122,7 +122,7 @@ Optimized for AI search engines (ChatGPT, Gemini, Perplexity):
 ## Contact Information
 - Website: https://kalangan.vercel.app
 - Phone: +91 98332 91030
-- Email: kalangan.crafts@gmail.com
+- Email: kalanganhandmade@gmail.com
 - Instagram: @__kalangan_
 
 ---

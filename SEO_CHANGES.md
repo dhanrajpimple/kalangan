@@ -8,7 +8,7 @@
 - ✅ 40+ targeted keywords including:
   - Product-specific: wedding frame, nameplate, birthday gifts, fridge magnets, keychains
   - Long-tail: "buy handmade wedding frames online India", "customized nameplate for home door"
-  - Location-based: Kalyan, Maharashtra, Pan India
+  - Location-based: Mumbai, Maharashtra, Pan India
   - Multilingual: हस्तनिर्मित उपहार, कस्टमाइज्ड फ्रेम, कलांगण
 - ✅ Enhanced OpenGraph tags for social media
 - ✅ Twitter Card metadata
@@ -53,16 +53,16 @@ Created metadata.ts files for each major page:
 #### Homepage (app/page.tsx)
 - ✅ Updated H1: "Handmade Gifts & Frames"
 - ✅ Product-rich description mentioning all categories
-- ✅ Location badge: "Kalyan, Maharashtra Based | Delivering Pan India 🇮🇳"
+- ✅ Location badge: "Mumbai, Maharashtra Based | Delivering Pan India 🇮🇳"
 
 #### Products Page (app/products/page.tsx)
 - ✅ Updated subtitle with all product categories
 - ✅ Enhanced structured data descriptions
 
 #### Footer (components/Footer.tsx)
-- ✅ Updated location: "Kalyan, Maharashtra | Pan India Shipping"
+- ✅ Updated location: "Mumbai, Maharashtra | Pan India Shipping"
 - ✅ Correct phone number: +91 98332 91030
-- ✅ Email: kalangan.crafts@gmail.com
+- ✅ Email: kalanganhandmade@gmail.com
 
 ### 6. **Multilingual SEO**
 Keywords added in multiple languages:
@@ -104,7 +104,7 @@ Optimized for ChatGPT, Gemini, Perplexity, and other AI search engines:
 - ✅ personalized keychains for couples
 
 ### Location-Based Keywords
-- ✅ handmade gifts Kalyan Maharashtra
+- ✅ handmade gifts Mumbai Maharashtra
 - ✅ customized frames Mumbai
 - ✅ personalized gifts Pan India delivery
 
@@ -137,7 +137,7 @@ Optimized for ChatGPT, Gemini, Perplexity, and other AI search engines:
 - ✅ Business name, address, phone (NAP)
 - ✅ Geo-coordinates
 - ✅ Service area defined
-- ✅ Local keywords (Kalyan, Maharashtra)
+- ✅ Local keywords (Mumbai, Maharashtra)
 - ✅ Pan India coverage mentioned
 
 ### International SEO
@@ -151,7 +151,7 @@ Optimized for ChatGPT, Gemini, Perplexity, and other AI search engines:
 The website is now optimized to rank for:
 1. **Product searches**: "wedding frame online", "nameplate buy", "birthday gifts"
 2. **Long-tail searches**: "customized wedding frame India", "personalized nameplate for home"
-3. **Local searches**: "handmade gifts Kalyan", "customized frames Mumbai"
+3. **Local searches**: "handmade gifts Mumbai", "customized frames Mumbai"
 4. **Voice searches**: "where to buy wedding frames online in India"
 5. **AI searches**: Queries in ChatGPT, Gemini, Perplexity about handmade gifts
 
@@ -188,8 +188,8 @@ The website is now optimized to rank for:
 
 ## 📞 Contact Information (Updated)
 - **Phone**: +91 98332 91030
-- **Email**: kalangan.crafts@gmail.com
-- **Location**: Kalyan, Maharashtra
+- **Email**: kalanganhandmade@gmail.com
+- **Location**: Mumbai, Maharashtra
 - **Service Area**: Pan India
 - **Instagram**: @__kalangan_
 

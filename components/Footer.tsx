@@ -96,13 +96,13 @@ export default function Footer() {
                                 <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
                                     <Mail size={16} />
                                 </div>
-                                <span className="text-sm text-white/70 break-all leading-snug">kalangan.crafts@gmail.com</span>
+                                <span className="text-sm text-white/70 break-all leading-snug">kalanganhandmade@gmail.com</span>
                             </li>
                             <li className="flex items-start gap-3 group">
                                 <div className="p-2 rounded-lg bg-white/5 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
                                     <MapPin size={16} />
                                 </div>
-                                <span className="text-sm text-white/70 leading-snug">Kalyan, Maharashtra | Pan India Shipping</span>
+                                <span className="text-sm text-white/70 leading-snug">Mumbai, Maharashtra | Pan India Shipping</span>
                             </li>
                         </ul>
                     </div>

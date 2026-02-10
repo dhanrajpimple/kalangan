@@ -14,10 +14,7 @@ const FAQS = [
         question: 'Do you offer customization?',
         answer: 'Yes! Full customization for names, designs, and materials available.',
     },
-    {
-        question: 'What is your refund policy?',
-        answer: '100% refund within 7 days if the product is damaged.',
-    },
+    
     {
         question: 'Can I place bulk orders?',
         answer: 'Absolutely! Special pricing for bulk orders available.',
@@ -134,7 +131,7 @@ export default function Contact() {
                             </div>
                         </a>
                         <a
-                            href="mailto:kalangan.crafts@gmail.com"
+                            href="mailto:kalanganhandmade@gmail.com"
                             className="glass-card hover-lift rounded-2xl p-6 flex items-center gap-4"
                         >
                             <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(212, 175, 55, 0.1)' }}>
@@ -142,7 +139,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500">Email us</p>
-                                <p className="font-semibold text-sm sm:text-base" style={{ color: '#D4AF37' }}>kalangan.crafts@gmail.com</p>
+                                <p className="font-semibold text-sm sm:text-base" style={{ color: '#D4AF37' }}>kalanganhandmade@gmail.com</p>
                             </div>
                         </a>
                     </div>
@@ -168,7 +165,7 @@ export default function Contact() {
                             <MapPin size={24} style={{ color: '#8B0000' }} />
                         </div>
                         <div>
-                            <p className="font-semibold" style={{ color: '#8B0000' }}>Kalyan, Maharashtra</p>
+                            <p className="font-semibold" style={{ color: '#8B0000' }}>Mumbai, Maharashtra</p>
                             <p className="text-sm text-gray-600 font-medium">✨ Serving & Shipping Pan India ✨</p>
                         </div>
                     </div>

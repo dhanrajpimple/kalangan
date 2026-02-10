@@ -23,7 +23,7 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 ✅ Title: "Kalangan | Wedding Frames, Nameplates, Birthday Gifts, Customized Frames & Keychains"
 ✅ 40+ targeted keywords (short-tail + long-tail)
 ✅ Multilingual keywords (Hindi, Marathi)
-✅ Location optimization (Kalyan, Maharashtra, Pan India)
+✅ Location optimization (Mumbai, Maharashtra, Pan India)
 ✅ Complete JSON-LD schema with product catalog
 ```
 
@@ -31,7 +31,7 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 ```
 ✅ H1: "Handmade Gifts & Frames"
 ✅ Product-rich description
-✅ Location badge: "Kalyan, Maharashtra | Delivering Pan India 🇮🇳"
+✅ Location badge: "Mumbai, Maharashtra | Delivering Pan India 🇮🇳"
 ```
 
 ### 3. **Products Page** (app/products/page.tsx)
@@ -54,7 +54,7 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 ✅ FAQPage schema (4 common questions)
 ✅ ContactPage schema
 ✅ Updated phone: +91 98332 91030
-✅ Location: Kalyan, Maharashtra
+✅ Location: Mumbai, Maharashtra
 ```
 
 ### 6. **Technical SEO Files**
@@ -88,7 +88,7 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 - personalized keychains for couples
 
 ### Location Keywords
-- handmade gifts Kalyan Maharashtra
+- handmade gifts Mumbai Maharashtra
 - customized frames Mumbai
 - personalized gifts Pan India delivery
 
@@ -129,7 +129,7 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 
 ### ✅ Local SEO
 - Business NAP (Name, Address, Phone)
-- Geo-coordinates (Kalyan location)
+- Geo-coordinates (Mumbai location)
 - Service area (Pan India)
 - LocalBusiness schema
 - Location-specific keywords
@@ -189,7 +189,7 @@ Your website will now rank for:
 - ✅ "wedding frame online India"
 - ✅ "customized nameplate"
 - ✅ "birthday gifts handmade"
-- ✅ "personalized frames Kalyan"
+- ✅ "personalized frames Mumbai"
 - ✅ "fridge magnets online"
 - ✅ "keychains customized India"
 
@@ -240,8 +240,8 @@ Google will show:
 
 - **Website**: https://kalangan.vercel.app
 - **Phone**: +91 98332 91030 ✅ (Updated)
-- **Email**: kalangan.crafts@gmail.com ✅ (Updated)
-- **Location**: Kalyan, Maharashtra ✅ (Updated)
+- **Email**: kalanganhandmade@gmail.com ✅ (Updated)
+- **Location**: Mumbai, Maharashtra ✅ (Updated)
 - **Service Area**: Pan India 🇮🇳
 - **Instagram**: @__kalangan_
 
@@ -289,7 +289,7 @@ All SEO documentation is in the `/ui` folder:
 ✅ **40+ Keywords** - Comprehensive keyword targeting
 ✅ **Multilingual** - Hindi, Marathi, English
 ✅ **AI-Ready** - Optimized for ChatGPT, Gemini, etc.
-✅ **Local + National** - Kalyan base, Pan India reach
+✅ **Local + National** - Mumbai base, Pan India reach
 ✅ **Mobile-First** - Fully responsive design
 ✅ **Schema-Rich** - Complete structured data
 ✅ **Fast Loading** - Optimized performance

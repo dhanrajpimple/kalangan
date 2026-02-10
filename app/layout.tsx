@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts, Customized Frames & Keychains',
     template: '%s | Kalangan'
   },
-  description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Kalyan, Maharashtra. Pan India delivery. Best customized gift shop for weddings, birthdays, anniversaries & all occasions.',
+  description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Mumbai, Maharashtra. Pan India delivery. Best customized gift shop for weddings, birthdays, anniversaries & all occasions.',
   keywords: [
     // Product-specific keywords
     'wedding frame online India',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'personalized keychains for couples',
 
     // Location-based
-    'handmade gifts Kalyan Maharashtra',
+    'handmade gifts Mumbai Maharashtra',
     'customized frames Mumbai',
     'personalized gifts Pan India delivery',
 
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts & Customized Keychains',
-    description: 'Premium handmade wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets & keychains. Handcrafted with love in Kalyan. Pan India delivery available.',
+    description: 'Premium handmade wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets & keychains. Handcrafted with love in Mumbai. Pan India delivery available.',
     url: 'https://kalangan.vercel.app',
     siteName: 'Kalangan',
     locale: 'en_IN',
@@ -118,12 +118,12 @@ export default function RootLayout({
     "@id": "https://kalangan.vercel.app",
     "url": "https://kalangan.vercel.app",
     "telephone": "+919833291030",
-    "email": "kalangan.crafts@gmail.com",
+    "email": "kalanganhandmade@gmail.com",
     "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Kalyan",
-      "addressLocality": "Kalyan",
+      "streetAddress": "Mumbai",
+      "addressLocality": "Mumbai",
       "addressRegion": "Maharashtra",
       "postalCode": "421301",
       "addressCountry": "IN"

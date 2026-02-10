@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight, MessageCircle, Sparkles, Heart, Package } from 'lucide-react';
 import Footer from '@/components/Footer';
@@ -8,29 +8,20 @@ import Navbar from '@/components/Navbar';
 import ReviewsMarquee from '@/components/ReviewsMarquee';
 
 export default function Home() {
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [showWhatsApp, setShowWhatsApp] = useState(false);
-
-  useEffect(() => {
-    setShowWhatsApp(true);
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [showWhatsApp, setShowWhatsApp] = useState(true);
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Main Content - Fades in */}
+      {/* Main Content - Shows immediately */}
       <div
         suppressHydrationWarning
-        className="relative z-10 flex flex-col min-h-screen transition-opacity duration-1000 delay-500"
-        style={{ opacity: isAnimating ? 0 : 1 }}
+        className="relative z-10 flex flex-col min-h-screen transition-opacity duration-1000"
+        style={{ opacity: 1 }}
       >
         <Navbar />
 
         {/* WhatsApp Floating Button */}
-        {showWhatsApp && !isAnimating && (
+        {showWhatsApp && (
           <a
             href="https://wa.me/919833291030"
             target="_blank"
@@ -79,7 +70,7 @@ export default function Home() {
               <div className="glass-card hover-lift p-4 sm:p-6 rounded-2xl text-center cursor-default">
                 <Heart className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" style={{ color: '#D4AF37' }} fill="#D4AF37" />
                 <p className="text-2xl sm:text-3xl font-black" style={{ color: '#8B0000' }}>500+</p>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Happy</p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">Happy Customers</p>
               </div>
               <div className="glass-card hover-lift p-4 sm:p-6 rounded-2xl text-center cursor-default">
                 <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" style={{ color: '#8B0000' }} />

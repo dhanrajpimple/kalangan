@@ -22,7 +22,7 @@ Include these elements:
 
 **Template:**
 ```
-[Product Type] perfect for [Occasion]. Handmade with [Materials] in Kalyan, Maharashtra. 
+[Product Type] perfect for [Occasion]. Handmade with [Materials] in Mumbai, Maharashtra. 
 Fully customizable with [Customization Options]. Ideal for [Target Audience]. 
 Available with Pan India delivery.
 ```
@@ -30,7 +30,7 @@ Available with Pan India delivery.
 **Example:**
 ```
 Customized wedding frame perfect for couples celebrating their special day. Handmade with 
-premium wood and acrylic in Kalyan, Maharashtra. Fully customizable with names, dates, 
+premium wood and acrylic in Mumbai, Maharashtra. Fully customizable with names, dates, 
 and photos. Ideal for wedding gifts, anniversary presents, or home decoration. 
 Available with Pan India delivery.
 ```
@@ -56,7 +56,7 @@ For each product, think about:
 - **Material**: wooden, acrylic, metal
 - **Occasion**: wedding, birthday, anniversary
 - **Customization**: personalized, customized, with names
-- **Location**: Kalyan, Maharashtra, India
+- **Location**: Mumbai, Maharashtra, India
 
 ### 6. Pricing Strategy
 - ✅ Show price if standard product
@@ -79,7 +79,7 @@ Add relevant tags:
 ```json
 {
   "name": "Personalized Wooden Wedding Frame with Names",
-  "description": "Beautiful handmade wooden wedding frame perfect for couples. Customize with your names and wedding date. Premium quality wood crafted in Kalyan, Maharashtra. Ideal wedding gift or home decor. Pan India delivery available.",
+  "description": "Beautiful handmade wooden wedding frame perfect for couples. Customize with your names and wedding date. Premium quality wood crafted in Mumbai, Maharashtra. Ideal wedding gift or home decor. Pan India delivery available.",
   "category": "Wedding Frames",
   "keywords": ["wedding frame", "personalized wedding gift", "wooden frame", "couple frame"],
   "alt_text": "Customized wooden wedding frame with couple names and date",
@@ -91,7 +91,7 @@ Add relevant tags:
 ```json
 {
   "name": "Customized Acrylic Nameplate for Home Door",
-  "description": "Modern acrylic nameplate for your home entrance. Fully customizable with family name and design. Handcrafted in Kalyan with premium materials. Perfect for housewarming gifts. Weather-resistant and durable. Pan India shipping.",
+  "description": "Modern acrylic nameplate for your home entrance. Fully customizable with family name and design. Handcrafted in Mumbai with premium materials. Perfect for housewarming gifts. Weather-resistant and durable. Pan India shipping.",
   "category": "Nameplates",
   "keywords": ["nameplate for home", "acrylic nameplate", "door nameplate", "customized nameplate"],
   "alt_text": "Modern acrylic nameplate for home door with custom family name",
@@ -103,7 +103,7 @@ Add relevant tags:
 ```json
 {
   "name": "Personalized Birthday Gift Frame with Photo",
-  "description": "Unique birthday gift frame with personalized photo and message. Handmade with love in Kalyan, Maharashtra. Customize with name, age, and special birthday wishes. Perfect for friends, family, or colleagues. Pan India delivery.",
+  "description": "Unique birthday gift frame with personalized photo and message. Handmade with love in Mumbai, Maharashtra. Customize with name, age, and special birthday wishes. Perfect for friends, family, or colleagues. Pan India delivery.",
   "category": "Birthday Gifts",
   "keywords": ["birthday gift", "personalized birthday frame", "photo frame", "birthday present"],
   "alt_text": "Personalized birthday gift frame with custom photo and message",
@@ -115,7 +115,7 @@ Add relevant tags:
 
 ### DO ✅
 - Use natural, conversational language
-- Include location (Kalyan, Maharashtra)
+- Include location (Mumbai, Maharashtra)
 - Mention Pan India delivery
 - Highlight customization options
 - Use occasion-based keywords

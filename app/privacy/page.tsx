@@ -77,7 +77,7 @@ export default function Privacy() {
                                 7. Contact Us
                             </h2>
                             <p className="text-gray-700 leading-relaxed">
-                                If you have questions about our privacy practices, please contact us via WhatsApp at +91 98332 91030 or email us at kalangan.crafts@gmail.com.
+                                If you have questions about our privacy practices, please contact us via WhatsApp at +91 98332 91030 or email us at kalanganhandmade@gmail.com.
                             </p>
                         </div>
 

@@ -14,7 +14,7 @@ export default function RefundPolicy() {
             <div className="flex-1">
                 <div className="max-w-4xl mx-auto px-6 py-20 space-y-8">
                     <h1 className="text-5xl font-black" style={{ color: '#8B0000' }}>
-                        Refund & Return Policy
+                        No Refund & Return Policy
                     </h1>
 
                     <div style={{ backgroundColor: '#ffffff', borderLeft: '8px solid #D4AF37' }} className="p-8 rounded-lg space-y-6">
@@ -89,7 +89,7 @@ export default function RefundPolicy() {
                                 8. Contact for Issues
                             </h2>
                             <p className="text-gray-700 leading-relaxed">
-                                For any refund or return questions, contact us via WhatsApp at +91 98332 91030 or email kalangan.crafts@gmail.com.
+                                For any refund or return questions, contact us via WhatsApp at +91 98332 91030 or email kalanganhandmade@gmail.com.
                             </p>
                         </div>
                     </div>

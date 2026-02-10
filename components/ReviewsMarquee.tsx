@@ -5,12 +5,11 @@ import { Star, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const reviews = [
-    { name: 'Priya S.', text: 'Absolutely in love with my custom piece! The quality is insane 💕', rating: 5 },
-    { name: 'Ananya P.', text: 'Best gift ever! My mom was so happy. Definitely ordering again', rating: 5 },
-    { name: 'Divya S.', text: 'Handmade excellence. Worth every penny! 10/10', rating: 5 },
-    { name: 'Isha G.', text: 'Fast delivery, amazing packaging. Obsessed!', rating: 5 },
-    { name: 'Riya M.', text: 'The detailing is exquisite. Unique and beautiful!', rating: 5 },
-    { name: 'Sanya K.', text: 'Loved the personalized touch. Will shop again!', rating: 5 },
+    { name: 'जयश्री थोरात', text: 'खूप सुंदर ताई, फ्रेम खूप खूप आवडली.', rating: 5 },
+  { name: 'दीप्ती जोशी', text: 'Order Received. Fridge Magnets खूप छान आहेत.', rating: 5 },
+  { name: 'Rutuja', text: 'Thank you so much for making such a beautiful Wedding frame. Your creativity and efforts truly means a lot to me, and I will treasure it always.', rating: 5 },
+  { name: 'Khanvilkar', text: 'आम्हाला नेमप्लेट खूप आवडली. आम्हाला जशी हवी होती तशीच मिळाली. Thank You.', rating: 5 },
+  { name: 'मानसी पवार', text: 'खूप मनापासून धन्यवाद. अगदी एका दिवसात तुम्ही आमची २५ फ्रेम्सची ऑर्डर पूर्ण करून दिलीत.', rating: 5 },
 ];
 
 export default function ReviewsMarquee() {

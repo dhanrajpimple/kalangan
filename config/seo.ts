@@ -5,15 +5,15 @@ export const SITE_CONFIG = {
     name: 'Kalangan',
     alternateName: 'कलांगण',
     url: 'https://kalangan.vercel.app',
-    description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Kalyan, Maharashtra. Pan India delivery.',
+    description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Mumbai, Maharashtra. Pan India delivery.',
     locale: 'en_IN',
     phone: '+919833291030',
-    email: 'kalangan.crafts@gmail.com',
+    email: 'kalanganhandmade@gmail.com',
     address: {
-        street: 'Kalyan',
-        city: 'Kalyan',
+        street: 'Mumbai',
+        city: 'Mumbai',
         state: 'Maharashtra',
-        postalCode: '421301',
+        postalCode: '400001',
         country: 'India',
     },
     social: {
@@ -75,10 +75,10 @@ export const LONG_TAIL_KEYWORDS = [
 
 // Location-based Keywords
 export const LOCATION_KEYWORDS = [
-    'handmade gifts Kalyan Maharashtra',
+    'handmade gifts Mumbai Maharashtra',
     'customized frames Mumbai',
     'personalized gifts Pan India delivery',
-    'wedding frames Thane',
+    'wedding frames Mumbai',
     'nameplates online Maharashtra',
     'handcrafted gifts India',
 ];

@@ -1,109 +1,52 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import React from 'react';
 
 export default function BackgroundDecor() {
-    const pathname = usePathname();
-    const isHomePage = pathname === '/';
-
-    // For home page, we animate. For others, we show static.
-    const [isAnimating, setIsAnimating] = useState(isHomePage);
-
-    useEffect(() => {
-        if (isHomePage) {
-            // Reset animation state when visiting home
-            setIsAnimating(true);
-            const timer = setTimeout(() => {
-                setIsAnimating(false);
-            }, 2000);
-            return () => clearTimeout(timer);
-        } else {
-            // Ensure static state immediately for other pages
-            setIsAnimating(false);
-        }
-    }, [isHomePage, pathname]);
-
-    // Determine styles based on route and animation state
-    // content starts (opacity 1, scale 1.1) on Home load, then goes to (opacity 0.15, scale 1)
-    // On other pages, it is always (opacity 0.15, scale 1)
-
-    const getRightImageStyle = () => {
-        if (isHomePage && isAnimating) {
-            return {
-                transform: 'translateX(0) scale(1.1)',
-                opacity: 1,
-                zIndex: 50,
-                filter: 'none'
-            };
-        }
-        return {
-            transform: 'translateX(30%) scale(1)', // Static position
-            opacity: 0.15,
-            zIndex: 0,
-            filter: 'grayscale(20%) sepia(20%)'
-        };
-    };
-
-    const getLeftImageStyle = () => {
-        if (isHomePage && isAnimating) {
-            return {
-                transform: 'translateX(0) scale(1.1)',
-                opacity: 1,
-                zIndex: 50,
-                filter: 'none'
-            };
-        }
-        return {
-            transform: 'translateX(-30%) scale(1)', // Static position
-            opacity: 0.15,
-            zIndex: 0,
-            filter: 'grayscale(20%) sepia(20%)'
-        };
-    };
+    // Images are now static in the background as per user request to stop animation
 
     return (
         <div suppressHydrationWarning className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#FFFDD0]">
             {/* Right Image */}
             <div
-                className="absolute right-0 top-0 h-full flex items-center justify-end transition-all duration-1000 ease-in-out"
+                className="absolute right-0 top-0 h-full flex items-center justify-end"
                 style={{
-                    ...getRightImageStyle(),
-                    opacity: (isHomePage && isAnimating) ? 1 : 0.25,
-                    transform: (isHomePage && isAnimating) ? 'translateX(0) scale(1.1)' : 'translateX(20%) scale(1)',
-                    zIndex: 1
+                    opacity: 0.15,
+                    transform: 'translateX(20%) translateY(5%) scale(1)', // Pushed down 5% to prevent head clipping
+                    zIndex: 1,
+                    filter: 'grayscale(20%) sepia(20%)'
                 }}
             >
                 <img
                     src="/right.png"
                     alt="Decorative Right"
-                    className="w-[250px] sm:w-[350px] md:w-[600px] object-contain"
+                    className="w-[250px] sm:w-[350px] md:w-[600px] object-contain max-h-[85vh]"
                 />
             </div>
 
             {/* Left Image */}
             <div
-                className="absolute left-0 top-0 h-full flex items-center justify-start transition-all duration-1000 ease-in-out"
+                className="absolute left-0 top-0 h-full flex items-center justify-start"
                 style={{
-                    ...getLeftImageStyle(),
-                    opacity: (isHomePage && isAnimating) ? 1 : 0.25,
-                    transform: (isHomePage && isAnimating) ? 'translateX(0) scale(1.1)' : 'translateX(-20%) scale(1)',
-                    zIndex: 1
+                    opacity: 0.15,
+                    transform: 'translateX(-20%) translateY(5%) scale(1)', // Pushed down 5% to prevent head clipping
+                    zIndex: 1,
+                    filter: 'grayscale(20%) sepia(20%)'
                 }}
             >
                 <img
                     src="/left.png"
                     alt="Decorative Left"
-                    className="w-[250px] sm:w-[350px] md:w-[600px] object-contain"
+                    className="w-[250px] sm:w-[350px] md:w-[600px] object-contain max-h-[85vh]"
                 />
             </div>
 
-            {/* Theme Overlay - Provides the color tint over the images */}
+            {/* Theme Overlay */}
             <div
-                className="absolute inset-0 transition-opacity duration-1000"
+                className="absolute inset-0"
                 style={{
                     backgroundColor: '#FFFDD0',
-                    opacity: (isHomePage && isAnimating) ? 0 : 0.4, // Reduced from 0.6 for better visibility
+                    opacity: 0.4,
                     zIndex: 2
                 }}
             />
