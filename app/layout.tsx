@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kalangan.vercel.app'),
+  metadataBase: new URL('https://kalanganhandmade.in'),
   title: {
     default: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts, Customized Frames & Keychains',
     template: '%s | Kalangan'
@@ -209,7 +209,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts & Customized Keychains',
     description: 'Premium handmade wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets & keychains. Handcrafted with love in Mumbai. Pan India delivery available.',
-    url: 'https://kalangan.vercel.app',
+    url: 'https://kalanganhandmade.in',
     siteName: 'Kalangan',
     locale: 'en_IN',
     type: 'website',
@@ -243,9 +243,9 @@ export default function RootLayout({
     "name": "Kalangan",
     "alternateName": "कलांगण",
     "description": "Premium handmade wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, and keychains. Handcrafted with love for all occasions.",
-    "image": "https://kalangan.vercel.app/logo.png",
-    "@id": "https://kalangan.vercel.app",
-    "url": "https://kalangan.vercel.app",
+    "image": "https://kalanganhandmade.in/logo.png",
+    "@id": "https://kalanganhandmade.in",
+    "url": "https://kalanganhandmade.in",
     "telephone": "+919833291030",
     "email": "kalanganhandmade@gmail.com",
     "priceRange": "₹₹",

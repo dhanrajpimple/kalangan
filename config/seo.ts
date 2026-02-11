@@ -4,7 +4,7 @@
 export const SITE_CONFIG = {
     name: 'Kalangan',
     alternateName: 'कलांगण',
-    url: 'https://kalangan.vercel.app',
+    url: 'https://kalanganhandmade.in',
     description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Mumbai, Maharashtra. Pan India delivery.',
     locale: 'en_IN',
     phone: '+919833291030',

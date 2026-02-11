@@ -53,7 +53,7 @@ export default function Contact() {
         "@type": "ContactPage",
         "name": "Contact Kalangan",
         "description": "Get in touch with Kalangan for customized wedding frames, nameplates, birthday gifts, and personalized handmade products. WhatsApp, phone, and email support available.",
-        "url": "https://kalangan.vercel.app/contact"
+        "url": "https://kalanganhandmade.in/contact"
     };
 
     return (

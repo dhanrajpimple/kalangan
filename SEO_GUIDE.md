@@ -120,7 +120,7 @@ Optimized for AI search engines (ChatGPT, Gemini, Perplexity):
 - Mobile-Friendly Test
 
 ## Contact Information
-- Website: https://kalangan.vercel.app
+- Website: https://kalanganhandmade.in
 - Phone: +91 98332 91030
 - Email: kalanganhandmade@gmail.com
 - Instagram: @__kalangan_

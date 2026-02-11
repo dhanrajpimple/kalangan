@@ -17,6 +17,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://kalangan.vercel.app/sitemap.xml',
+        sitemap: 'https://kalanganhandmade.in/sitemap.xml',
     }
 }

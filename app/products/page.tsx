@@ -130,7 +130,7 @@ export default function Products() {
         "itemListElement": products.map((product, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "url": `https://kalangan.vercel.app/products`,
+            "url": `https://kalanganhandmade.in/products`,
             "name": product.name,
             "image": product.image_url
         }))
@@ -144,13 +144,13 @@ export default function Products() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://kalangan.vercel.app"
+                "item": "https://kalanganhandmade.in"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://kalangan.vercel.app/products"
+                "item": "https://kalanganhandmade.in/products"
             }
         ]
     };

@@ -29,13 +29,13 @@ export default function About() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://kalangan.vercel.app"
+                "item": "https://kalanganhandmade.in"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "About Us",
-                "item": "https://kalangan.vercel.app/about"
+                "item": "https://kalanganhandmade.in/about"
             }
         ]
     };
@@ -46,7 +46,7 @@ export default function About() {
         "@type": "AboutPage",
         "name": "About Kalangan",
         "description": "कलांगण is a heartfelt handmade gifting brand specializing in wedding frames, nameplates, birthday gifts, customized frames, fridge magnets & keychains.",
-        "url": "https://kalangan.vercel.app/about"
+        "url": "https://kalanganhandmade.in/about"
     };
 
     return (

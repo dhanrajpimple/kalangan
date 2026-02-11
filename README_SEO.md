@@ -161,8 +161,8 @@ The Kalangan website has been **completely optimized for SEO** to rank for all t
 
 ### Google Search Console
 1. Go to: https://search.google.com/search-console
-2. Add property: https://kalangan.vercel.app
-3. Submit sitemap: https://kalangan.vercel.app/sitemap.xml
+2. Add property: https://kalanganhandmade.in
+3. Submit sitemap: https://kalanganhandmade.in/sitemap.xml
 4. Monitor indexing and rankings
 
 ### Schema Validation
@@ -238,7 +238,7 @@ Google will show:
 
 ## 📞 Updated Contact Information
 
-- **Website**: https://kalangan.vercel.app
+- **Website**: https://kalanganhandmade.in
 - **Phone**: +91 98332 91030 ✅ (Updated)
 - **Email**: kalanganhandmade@gmail.com ✅ (Updated)
 - **Location**: Mumbai, Maharashtra ✅ (Updated)
