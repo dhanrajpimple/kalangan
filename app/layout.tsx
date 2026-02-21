@@ -10,6 +10,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kalanganhandmade.in'),
+  verification: {
+    google: 'VaXszaSOtruwDwMIseI5V-nBAqQeA7f7RFbrIv3so30'
+  },
   title: {
     default: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts, Customized Frames & Keychains',
     template: '%s | Kalangan'
