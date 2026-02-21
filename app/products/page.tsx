@@ -35,6 +35,9 @@ export default function Products() {
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState({ name: '', address: '' });
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         setShowWhatsApp(true);
@@ -118,6 +121,30 @@ export default function Products() {
         setSelectedItems({});
         setFormData({ name: '', address: '' });
     };
+
+    const handleImageMouseDown = (e: React.MouseEvent) => {
+        setIsDragging(true);
+        setDragStart({ x: e.clientX - imagePosition.x, y: e.clientY - imagePosition.y });
+    };
+
+    const handleImageMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging) return;
+        const newX = e.clientX - dragStart.x;
+        const newY = e.clientY - dragStart.y;
+        setImagePosition({ x: newX, y: newY });
+    };
+
+    const handleImageMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const resetImagePosition = () => {
+        setImagePosition({ x: 0, y: 0 });
+    };
+
+    useEffect(() => {
+        resetImagePosition();
+    }, [selectedProductDetail]);
 
     const totalSelectedCount = Object.keys(selectedItems).length;
 
@@ -405,11 +432,22 @@ export default function Products() {
                     >
                         <div className="flex flex-col md:flex-row h-full">
                             {/* Image Part */}
-                            <div className="md:w-1/2 aspect-square md:aspect-auto relative bg-gray-50">
+                            <div 
+                                className="md:w-1/2 aspect-square md:aspect-auto relative bg-gray-50 overflow-hidden cursor-move"
+                                onMouseDown={handleImageMouseDown}
+                                onMouseMove={handleImageMouseMove}
+                                onMouseUp={handleImageMouseUp}
+                                onMouseLeave={handleImageMouseUp}
+                            >
                                 <img
                                     src={selectedProductDetail.image_url || '/jewelry.webp'}
                                     alt={selectedProductDetail.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain transition-none"
+                                    style={{
+                                        transform: `translate(${imagePosition.x}px, ${imagePosition.y}px)`,
+                                        cursor: isDragging ? 'grabbing' : 'grab'
+                                    }}
+                                    draggable={false}
                                 />
                                 <button
                                     onClick={() => setSelectedProductDetail(null)}
@@ -417,6 +455,18 @@ export default function Products() {
                                 >
                                     <X size={20} />
                                 </button>
+                                {/* Reset position button */}
+                                {(imagePosition.x !== 0 || imagePosition.y !== 0) && (
+                                    <button
+                                        onClick={resetImagePosition}
+                                        className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all"
+                                    >
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                            <path d="M3 3v5h5"/>
+                                        </svg>
+                                    </button>
+                                )}
                             </div>
 
                             {/* Info Part */}
