@@ -212,18 +212,18 @@ export default function Products() {
                 <div className="max-w-6xl mx-auto">
 
                     {/* Header */}
-                    <div className="text-center mb-10 animate-fade-in-up">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-3" style={{ color: '#8B0000' }}>
+                    <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
+                        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-3 px-2" style={{ color: '#8B0000' }}>
                             Handmade Collection
                         </h1>
-                        <p className="text-gray-600">Wedding Frames, Nameplates, Birthday Gifts, Customized Frames, Fridge Magnets & Keychains</p>
+                        <p className="text-gray-600 text-sm sm:text-base px-4">Wedding Frames, Nameplates, Birthday Gifts, Customized Frames, Fridge Magnets & Keychains</p>
                     </div>
 
                     {/* Category Pills */}
-                    <div className="flex flex-wrap gap-2 justify-center mb-10 animate-fade-in-up delay-100">
+                    <div className="flex flex-nowrap sm:flex-wrap gap-2 justify-start sm:justify-center mb-10 overflow-x-auto pb-4 sm:pb-0 px-4 sm:px-0 scrollbar-hide animate-fade-in-up delay-100">
                         <button
                             onClick={() => handleCategoryChange('Best Seller')}
-                            className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                            className="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap"
                             style={{
                                 backgroundColor: selectedCategory === 'Best Seller' ? '#8B0000' : 'rgba(255,255,255,0.8)',
                                 color: selectedCategory === 'Best Seller' ? '#fff' : '#8B0000',
@@ -236,7 +236,7 @@ export default function Products() {
                             <button
                                 key={cat.id}
                                 onClick={() => handleCategoryChange(cat.id)}
-                                className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                                className="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap"
                                 style={{
                                     backgroundColor: selectedCategory === cat.id ? '#8B0000' : 'rgba(255,255,255,0.8)',
                                     color: selectedCategory === cat.id ? '#fff' : '#8B0000',
@@ -254,7 +254,7 @@ export default function Products() {
                             <div className="w-10 h-10 border-4 border-[#8B0000] border-t-transparent rounded-full animate-spin"></div>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 mb-12">
                             {products.length === 0 ? (
                                 <div className="col-span-full text-center py-10 text-gray-500">
                                     No products found in this category.
@@ -305,21 +305,21 @@ export default function Products() {
                                                 </div>
                                             ) : null}
                                         </div>
-                                        <div className="p-4">
-                                            <h3 className="font-semibold text-sm sm:text-base mb-3 leading-tight" style={{ color: product.in_stock ? '#2d2d2d' : '#9ca3af' }}>
+                                        <div className="p-3 sm:p-4">
+                                            <h3 className="font-semibold text-xs sm:text-base mb-3 leading-tight line-clamp-2 h-8 sm:h-12" style={{ color: product.in_stock ? '#2d2d2d' : '#9ca3af' }}>
                                                 {product.name}
                                             </h3>
                                             {!product.in_stock ? (
                                                 <button
                                                     disabled
-                                                    className="w-full py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-400 border border-gray-200"
+                                                    className="w-full py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gray-100 text-gray-400 border border-gray-200"
                                                 >
                                                     Out of Stock
                                                 </button>
                                             ) : selectedItems[product.id] ? (
                                                 <button
                                                     onClick={(e) => { e.stopPropagation(); toggleProduct(product); }}
-                                                    className="w-full py-2.5 rounded-xl text-sm font-medium transition-all"
+                                                    className="w-full py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all"
                                                     style={{ backgroundColor: 'rgba(139,0,0,0.1)', color: '#8B0000' }}
                                                 >
                                                     Selected ✓
@@ -327,7 +327,7 @@ export default function Products() {
                                             ) : (
                                                 <button
                                                     onClick={(e) => { e.stopPropagation(); toggleProduct(product); }}
-                                                    className="w-full py-2.5 rounded-xl text-sm font-medium text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
+                                                    className="w-full py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
                                                     style={{
                                                         background: 'linear-gradient(135deg, #8B0000 0%, #D4AF37 100%)',
                                                         boxShadow: '0 4px 15px rgba(139,0,0,0.2)'
@@ -347,25 +347,24 @@ export default function Products() {
 
             {/* Floating Cart Button */}
             {totalSelectedCount > 0 && (
-                <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-30 animate-fade-in-up">
+                <div className="fixed bottom-24 sm:bottom-24 left-1/2 -translate-x-1/2 z-30 animate-fade-in-up md:hover:scale-110 transition-transform">
                     <button
                         onClick={() => setShowForm(true)}
-                        className="flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold shadow-2xl transition-all hover:scale-105 active:scale-95"
+                        className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white text-sm sm:text-base font-semibold shadow-2xl transition-all active:scale-95 whitespace-nowrap"
                         style={{
                             background: 'linear-gradient(135deg, #8B0000 0%, #D4AF37 100%)',
                             boxShadow: '0 8px 25px rgba(139,0,0,0.3)'
                         }}
                     >
-                        <ShoppingBag size={20} />
+                        <ShoppingBag size={18} className="sm:w-5 sm:h-5" />
                         Order Now ({totalSelectedCount})
                     </button>
                 </div>
             )}
-
             {/* Order Modal */}
             {showForm && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowForm(false)}>
-                    <div className="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 animate-scale-in" onClick={e => e.stopPropagation()}>
+                    <div className="glass-card rounded-[2rem] max-w-md w-full p-6 sm:p-8 animate-scale-in" onClick={e => e.stopPropagation()}>
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-xl sm:text-2xl font-bold" style={{ color: '#8B0000' }}>Complete Order</h2>
                             <button onClick={() => setShowForm(false)} className="text-gray-400 hover:text-gray-600">
@@ -374,7 +373,7 @@ export default function Products() {
                         </div>
 
                         {/* Items */}
-                        <div className="space-y-2 mb-6 max-h-32 overflow-y-auto font-inter">
+                        <div className="space-y-2 mb-6 max-h-32 overflow-y-auto font-inter scrollbar-hide">
                             {getSelectedList().map(item => (
                                 <div key={item.id} className="flex justify-between text-sm">
                                     <span className="text-gray-700">{item.name}</span>
@@ -424,56 +423,56 @@ export default function Products() {
 
             {/* Product Detail Modal */}
             {selectedProductDetail && (
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-4" onClick={() => setSelectedProductDetail(null)}>
+                <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-2 sm:p-4" onClick={() => setSelectedProductDetail(null)}>
                     <div
-                        className="glass-card rounded-[2rem] max-w-2xl w-full overflow-hidden animate-scale-in"
+                        className="glass-card rounded-[1.5rem] sm:rounded-[2rem] max-w-2xl w-full flex flex-col md:flex-row overflow-hidden animate-scale-in"
                         onClick={e => e.stopPropagation()}
-                        style={{ maxHeight: '90vh' }}
+                        style={{ maxHeight: '92vh' }}
                     >
-                        <div className="flex flex-col md:flex-row h-full">
-                            {/* Image Part */}
-                            <div 
-                                className="md:w-1/2 aspect-square md:aspect-auto relative bg-gray-50 overflow-hidden cursor-move"
-                                onMouseDown={handleImageMouseDown}
-                                onMouseMove={handleImageMouseMove}
-                                onMouseUp={handleImageMouseUp}
-                                onMouseLeave={handleImageMouseUp}
+                        {/* Image Part */}
+                        <div
+                            className="md:w-1/2 h-64 sm:h-auto aspect-square md:aspect-auto relative bg-gray-50 overflow-hidden cursor-move"
+                            onMouseDown={handleImageMouseDown}
+                            onMouseMove={handleImageMouseMove}
+                            onMouseUp={handleImageMouseUp}
+                            onMouseLeave={handleImageMouseUp}
+                        >
+                            <img
+                                src={selectedProductDetail.image_url || '/jewelry.webp'}
+                                alt={selectedProductDetail.name}
+                                className="w-full h-full object-contain transition-none"
+                                style={{
+                                    transform: `translate(${imagePosition.x}px, ${imagePosition.y}px)`,
+                                    cursor: isDragging ? 'grabbing' : 'grab'
+                                }}
+                                draggable={false}
+                            />
+                            <button
+                                onClick={() => setSelectedProductDetail(null)}
+                                className="absolute top-4 left-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all md:hidden"
                             >
-                                <img
-                                    src={selectedProductDetail.image_url || '/jewelry.webp'}
-                                    alt={selectedProductDetail.name}
-                                    className="w-full h-full object-contain transition-none"
-                                    style={{
-                                        transform: `translate(${imagePosition.x}px, ${imagePosition.y}px)`,
-                                        cursor: isDragging ? 'grabbing' : 'grab'
-                                    }}
-                                    draggable={false}
-                                />
+                                <X size={20} />
+                            </button>
+                            {/* Reset position button */}
+                            {(imagePosition.x !== 0 || imagePosition.y !== 0) && (
                                 <button
-                                    onClick={() => setSelectedProductDetail(null)}
-                                    className="absolute top-4 left-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all md:hidden"
+                                    onClick={resetImagePosition}
+                                    className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all"
                                 >
-                                    <X size={20} />
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                        <path d="M3 3v5h5" />
+                                    </svg>
                                 </button>
-                                {/* Reset position button */}
-                                {(imagePosition.x !== 0 || imagePosition.y !== 0) && (
-                                    <button
-                                        onClick={resetImagePosition}
-                                        className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all"
-                                    >
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                                            <path d="M3 3v5h5"/>
-                                        </svg>
-                                    </button>
-                                )}
-                            </div>
+                            )}
+                        </div>
 
-                            {/* Info Part */}
-                            <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
+                        {/* Info Part */}
+                        <div className="md:w-1/2 flex flex-col flex-1 overflow-hidden">
+                            <div className="p-5 sm:p-8 flex-1 overflow-y-auto scrollbar-hide">
                                 <div className="space-y-4">
-                                    <div className="flex justify-between items-start">
-                                        <h2 className="text-2xl sm:text-3xl font-black leading-tight" style={{ color: '#8B0000' }}>
+                                    <div className="flex justify-between items-start gap-3">
+                                        <h2 className="text-xl sm:text-3xl font-black leading-tight" style={{ color: '#8B0000' }}>
                                             {selectedProductDetail.name}
                                         </h2>
                                         <button
@@ -495,9 +494,11 @@ export default function Products() {
                                     {selectedProductDetail.show_description !== false && selectedProductDetail.description && (
                                         <div className="space-y-2">
                                             <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400">Description</h4>
-                                            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                                                {selectedProductDetail.description}
-                                            </p>
+                                            <div className="max-h-32 sm:max-h-40 overflow-y-auto scrollbar-hide">
+                                                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                                                    {selectedProductDetail.description}
+                                                </p>
+                                            </div>
                                         </div>
                                     )}
 
@@ -506,49 +507,49 @@ export default function Products() {
                                         {selectedProductDetail.in_stock ? 'In Stock' : 'Out of Stock'}
                                     </div>
                                 </div>
+                            </div>
 
-                                <div className="mt-8 pt-6 border-t border-gray-100">
-                                    {selectedItems[selectedProductDetail.id] ? (
-                                        <div className="flex flex-col gap-4">
-                                            <div className="flex items-center justify-between bg-gray-50 p-4 rounded-2xl">
-                                                <span className="font-bold text-gray-800">Quantity</span>
-                                                <div className="flex items-center gap-4 bg-white rounded-full px-4 py-2 shadow-sm">
-                                                    <button onClick={() => updateQty(selectedProductDetail.id, -1)} className="text-[#8B0000] hover:scale-125 transition-transform">
-                                                        <Minus size={20} />
-                                                    </button>
-                                                    <span className="font-black text-lg min-w-[24px] text-center">{selectedItems[selectedProductDetail.id].qty}</span>
-                                                    <button onClick={() => updateQty(selectedProductDetail.id, 1)} className="text-[#8B0000] hover:scale-125 transition-transform">
-                                                        <Plus size={20} />
-                                                    </button>
-                                                </div>
+                            <div className="p-5 sm:p-8 pt-4 border-t border-gray-100 bg-white/50 backdrop-blur-md">
+                                {selectedItems[selectedProductDetail.id] ? (
+                                    <div className="flex flex-col gap-4">
+                                        <div className="flex items-center justify-between bg-gray-50 p-4 rounded-2xl">
+                                            <span className="font-bold text-gray-800">Quantity</span>
+                                            <div className="flex items-center gap-4 bg-white rounded-full px-4 py-2 shadow-sm">
+                                                <button onClick={() => updateQty(selectedProductDetail.id, -1)} className="text-[#8B0000] hover:scale-125 transition-transform">
+                                                    <Minus size={20} />
+                                                </button>
+                                                <span className="font-black text-lg min-w-[24px] text-center">{selectedItems[selectedProductDetail.id].qty}</span>
+                                                <button onClick={() => updateQty(selectedProductDetail.id, 1)} className="text-[#8B0000] hover:scale-125 transition-transform">
+                                                    <Plus size={20} />
+                                                </button>
                                             </div>
-                                            <button
-                                                onClick={() => {
-                                                    toggleProduct(selectedProductDetail);
-                                                    setSelectedProductDetail(null);
-                                                }}
-                                                className="w-full py-4 rounded-2xl font-bold bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-500 transition-all"
-                                            >
-                                                Remove from Order
-                                            </button>
                                         </div>
-                                    ) : (
                                         <button
                                             onClick={() => {
                                                 toggleProduct(selectedProductDetail);
                                                 setSelectedProductDetail(null);
                                             }}
-                                            disabled={!selectedProductDetail.in_stock}
-                                            className="w-full py-4 rounded-2xl font-bold text-white shadow-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:grayscale"
-                                            style={{
-                                                background: 'linear-gradient(135deg, #8B0000 0%, #D4AF37 100%)',
-                                                boxShadow: '0 10px 25px rgba(139,0,0,0.2)'
-                                            }}
+                                            className="w-full py-4 rounded-2xl font-bold bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-500 transition-all"
                                         >
-                                            {selectedProductDetail.in_stock ? 'Add to Order' : 'Sold Out'}
+                                            Remove from Order
                                         </button>
-                                    )}
-                                </div>
+                                    </div>
+                                ) : (
+                                    <button
+                                        onClick={() => {
+                                            toggleProduct(selectedProductDetail);
+                                            setSelectedProductDetail(null);
+                                        }}
+                                        disabled={!selectedProductDetail.in_stock}
+                                        className="w-full py-4 rounded-2xl font-bold text-white shadow-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:grayscale"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #8B0000 0%, #D4AF37 100%)',
+                                            boxShadow: '0 10px 25px rgba(139,0,0,0.2)'
+                                        }}
+                                    >
+                                        {selectedProductDetail.in_stock ? 'Add to Order' : 'Sold Out'}
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
