@@ -10,14 +10,18 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kalanganhandmade.in'),
+  applicationName: 'Kalangan Handmade',
   verification: {
     google: 'VaXszaSOtruwDwMIseI5V-nBAqQeA7f7RFbrIv3so30'
   },
   title: {
-    default: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts, Customized Frames & Keychains',
-    template: '%s | Kalangan'
+    default: 'Kalangan Handmade | कलांगण | Handmade Gifts & Customized Frames',
+    template: '%s | Kalangan Handmade'
   },
-  description: 'Buy handmade wedding frames, customized nameplates, birthday gifts, personalized frames, fridge magnets & keychains online. Premium handcrafted gifts from Mumbai, Maharashtra. Pan India delivery. Best customized gift shop for weddings, birthdays, anniversaries & all occasions.',
+  description: 'Kalangan Handmade, also known as कलांगण, is a handmade gift business in Mumbai offering wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, keychains and return gifts with Pan India delivery.',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     // Product-specific keywords
     'wedding frame online India',
@@ -153,6 +157,10 @@ export const metadata: Metadata = {
     'what are unique birthday gift ideas',
 
     // Hindi/Marathi keywords
+    'कलांगण',
+    'कलांगण handmade gifts',
+    'Kalangan Handmade',
+    'Kalangan Handmade Mumbai',
     'हस्तनिर्मित उपहार',
     'कस्टमाइज्ड फ्रेम',
     'हाथ से बनाया गया',
@@ -167,6 +175,30 @@ export const metadata: Metadata = {
     'personalized gift shop',
     'custom made gifts India',
     'handmade gift items online',
+    'handmade gifts online India',
+    'handmade gifts India',
+    'unique handmade gift',
+    'unique handmade gifts India',
+    'custom handmade gifts',
+    'personalized handmade gifts',
+    'customized handmade gifts',
+    'customized gifts online India',
+    'personalised gifts India',
+    'personalized gifts online India',
+    'custom gifts India',
+    'gift shop online India',
+    'handmade return gifts India',
+    'handmade wedding gifts India',
+    'personalized wedding gifts India',
+    'customized wedding gifts online',
+    'birthday gifts online India',
+    'personalized birthday gifts India',
+    'anniversary gifts online India',
+    'personalized anniversary gifts India',
+    'housewarming gifts India',
+    'personalized housewarming gifts',
+    'bulk return gifts India',
+    'handcrafted keepsakes India',
     'artisan crafted gifts India',
     'handcrafted personalized items',
     'unique handmade gifts online',
@@ -195,32 +227,49 @@ export const metadata: Metadata = {
     'bulk personalized keychains',
 
     // Trending searches
-    'trending gift ideas 2024',
+    'trending gift ideas 2026',
     'viral handmade gifts India',
     'Instagram worthy personalized gifts',
     'aesthetic handmade frames',
     'boho style customized gifts'
   ],
-  authors: [{ name: 'Kalangan' }],
-  creator: 'Kalangan',
-  publisher: 'Kalangan',
+  authors: [{ name: 'Kalangan Handmade' }],
+  creator: 'Kalangan Handmade',
+  publisher: 'Kalangan Handmade',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Kalangan | Wedding Frames, Nameplates, Birthday Gifts & Customized Keychains',
-    description: 'Premium handmade wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets & keychains. Handcrafted with love in Mumbai. Pan India delivery available.',
+    title: 'Kalangan Handmade | कलांगण | Handmade Gifts & Customized Frames',
+    description: 'Kalangan Handmade is a Mumbai-based handmade gifting business for wedding frames, personalized nameplates, birthday gifts, photo frames, fridge magnets, keychains and return gifts.',
     url: 'https://kalanganhandmade.in',
-    siteName: 'Kalangan',
+    siteName: 'Kalangan Handmade',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Kalangan Handmade logo for handmade gifts and customized frames',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kalangan | Handmade Wedding Frames & Personalized Gifts',
-    description: 'Buy customized wedding frames, nameplates, birthday gifts, fridge magnets & keychains. Handcrafted gifts for all occasions. Pan India delivery.',
+    title: 'Kalangan Handmade | Handmade Gifts & Personalized Frames',
+    description: 'Buy handmade wedding frames, nameplates, birthday gifts, fridge magnets and keychains from Kalangan Handmade. Pan India delivery.',
+    images: ['/logo.png'],
+  },
+  appleWebApp: {
+    title: 'Kalangan Handmade',
+  },
+  other: {
+    'application-name': 'Kalangan Handmade',
+    'apple-mobile-web-app-title': 'Kalangan Handmade',
+    'business-name': 'Kalangan Handmade',
   },
   robots: {
     index: true,
@@ -251,7 +300,7 @@ export default function RootLayout({
     "url": "https://kalanganhandmade.in",
     "telephone": "+919833291030",
     "email": "kalanganhandmade@gmail.com",
-    "priceRange": "₹₹",
+    "priceRange": "INR",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Mumbai",
@@ -323,12 +372,74 @@ export default function RootLayout({
     }
   };
 
+  const aiBrandJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kalanganhandmade.in/#website",
+        "url": "https://kalanganhandmade.in",
+        "name": "Kalangan Handmade",
+        "alternateName": ["Kalangan", "कलांगण"],
+        "description": "Official website of Kalangan Handmade, a handmade and customized gift business in Mumbai.",
+        "publisher": {
+          "@id": "https://kalanganhandmade.in/#business"
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": ["LocalBusiness", "Store", "Organization"],
+        "@id": "https://kalanganhandmade.in/#business",
+        "name": "Kalangan Handmade",
+        "legalName": "Kalangan Handmade",
+        "alternateName": ["Kalangan", "कलांगण"],
+        "description": "Kalangan Handmade is a Mumbai-based handmade gift business offering wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, keychains and return gifts.",
+        "image": "https://kalanganhandmade.in/logo.png",
+        "logo": "https://kalanganhandmade.in/logo.png",
+        "url": "https://kalanganhandmade.in",
+        "telephone": "+919833291030",
+        "email": "kalanganhandmade@gmail.com",
+        "priceRange": "INR",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mumbai",
+          "addressLocality": "Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "421301",
+          "addressCountry": "IN"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "knowsAbout": [
+          "handmade gifts",
+          "customized wedding frames",
+          "personalized nameplates",
+          "birthday gifts",
+          "photo frames",
+          "fridge magnets",
+          "keychains",
+          "return gifts",
+          "customized gifts in India"
+        ],
+        "sameAs": [
+          "https://www.instagram.com/__kalangan_?igsh=cjF6dzJnODlhcjlm"
+        ]
+      }
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aiBrandJsonLd) }}
         />
         <BackgroundDecor />
         <main className="relative z-10 w-full">

@@ -160,6 +160,24 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
+.product-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 252, 238, 0.92) 100%);
+  border-color: rgba(212, 175, 55, 0.28);
+  box-shadow: 0 14px 36px rgba(82, 26, 26, 0.1);
+}
+
+.product-image-stage {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 249, 225, 0.72) 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  padding: clamp(0.65rem, 2vw, 1rem);
+}
+
+.product-image {
+  filter: drop-shadow(0 16px 18px rgba(55, 34, 17, 0.14));
+}
+
 .glass-card-dark {
   background: rgba(139, 0, 0, 0.9);
   backdrop-filter: blur(20px);

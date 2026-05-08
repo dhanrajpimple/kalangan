@@ -1,8 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Products | Wedding Frames, Nameplates & Customized Gifts',
-    description: 'Shop handmade wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets & keychains. Premium handcrafted gifts for all occasions. Order online with Pan India delivery.',
+    title: 'Handmade Gifts Online | Wedding Frames, Nameplates & Customized Gifts',
+    description: 'Shop Kalangan handmade gifts online: wedding frames, personalized nameplates, birthday gifts, customized photo frames, fridge magnets, keychains, return gifts and keepsakes with Pan India delivery.',
+    alternates: {
+        canonical: '/products',
+    },
     keywords: [
         'buy wedding frames online',
         'customized wedding frame India',
@@ -13,6 +16,21 @@ export const metadata: Metadata = {
         'fridge magnets buy online',
         'personalized keychains India',
         'handmade gifts online store',
+        'handmade gifts online India',
+        'handmade gifts India',
+        'unique handmade gifts India',
+        'customized gifts online India',
+        'personalized gifts online India',
+        'personalised gifts India',
+        'custom handmade gifts',
+        'personalized handmade gifts',
+        'handmade wedding gifts India',
+        'personalized wedding gifts India',
+        'handmade return gifts India',
+        'bulk return gifts India',
+        'birthday gifts online India',
+        'anniversary gifts online India',
+        'housewarming gifts India',
         'custom photo frames India',
         'wedding return gift ideas',
         'anniversary gift frames',
@@ -60,8 +78,17 @@ export const metadata: Metadata = {
         'customized photo frames online same day delivery'
     ],
     openGraph: {
-        title: 'Shop Handmade Wedding Frames, Nameplates & Customized Gifts | Kalangan',
-        description: 'Browse our collection of handmade wedding frames, personalized nameplates, birthday gifts, and customized keychains. Premium quality, Pan India delivery.',
+        title: 'Shop Handmade Gifts, Wedding Frames & Customized Gifts | Kalangan',
+        description: 'Browse handmade wedding frames, personalized nameplates, birthday gifts, customized keychains, fridge magnets and return gifts. Premium quality, Pan India delivery.',
         type: 'website',
+        url: 'https://kalanganhandmade.in/products',
+        images: [
+            {
+                url: '/logo.png',
+                width: 512,
+                height: 512,
+                alt: 'Kalangan handmade gifts collection',
+            },
+        ],
     },
 };

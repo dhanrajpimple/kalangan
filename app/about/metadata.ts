@@ -1,10 +1,16 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'About Us | Handmade Gifts & Customized Frames | Kalangan',
-    description: 'कलांगण is a heartfelt handmade gifting brand specializing in wedding frames, nameplates, birthday gifts, customized frames, fridge magnets & keychains. Based in Mumbai, Maharashtra, serving Pan India with love.',
+    title: 'About Us | Handmade Gifts & Customized Frames',
+    description: 'कलांगण is a heartfelt handmade gifting brand specializing in wedding frames, nameplates, birthday gifts, customized frames, fridge magnets and keychains. Based in Mumbai, Maharashtra, serving Pan India with love.',
+    alternates: {
+        canonical: '/about',
+    },
     keywords: [
         'about Kalangan',
+        'Kalangan handmade gifts',
+        'कलांगण',
+        'हस्तनिर्मित उपहार ब्रांड',
         'handmade gift brand India',
         'customized gifts Mumbai',
         'personalized gifting company',
@@ -15,10 +21,6 @@ export const metadata: Metadata = {
         'custom frame business',
         'personalized gift service',
         'handmade return gifts',
-        'कलांगण',
-        'हस्तनिर्मित उपहार ब्रांड',
-
-        // About page specific long-tail
         'who makes handmade wedding frames in India',
         'best handmade gift brand Mumbai',
         'trusted customized frame seller India',
@@ -43,5 +45,14 @@ export const metadata: Metadata = {
         title: 'About Kalangan | Premium Handmade Gifts & Customized Frames',
         description: 'Discover our story of creating heartfelt handmade wedding frames, nameplates, and personalized gifts. Handcrafted with love in Mumbai, Maharashtra.',
         type: 'website',
+        url: 'https://kalanganhandmade.in/about',
+        images: [
+            {
+                url: '/logo.png',
+                width: 512,
+                height: 512,
+                alt: 'About Kalangan handmade gifts',
+            },
+        ],
     },
 };

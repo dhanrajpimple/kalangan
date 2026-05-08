@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Plus, Minus, ShoppingBag, X } from 'lucide-react';
+import { MessageCircle, Plus, Minus, ShoppingBag, X, RotateCcw } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { supabaseService } from '@/services/supabaseService';
@@ -114,7 +114,7 @@ export default function Products() {
         setErrors(newErrors);
         if (Object.keys(newErrors).length > 0) return;
 
-        const items = getSelectedList().map(p => `• ${p.name} x${p.quantity}`).join('\n');
+        const items = getSelectedList().map(p => `- ${p.name} x${p.quantity}`).join('\n');
         const msg = `Hi! I'd like to order:\n\n${items}\n\nName: ${formData.name}\nAddress: ${formData.address}`;
         window.open(`https://wa.me/919833291030?text=${encodeURIComponent(msg)}`, '_blank');
         setShowForm(false);
@@ -159,7 +159,24 @@ export default function Products() {
             "position": index + 1,
             "url": `https://kalanganhandmade.in/products`,
             "name": product.name,
-            "image": product.image_url
+            "image": product.image_url,
+            "item": {
+                "@type": "Product",
+                "name": product.name,
+                "description": product.description || "Handmade customized gift by Kalangan",
+                "image": product.image_url,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Kalangan"
+                },
+                "category": "Handmade gifts",
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "INR",
+                    "availability": product.in_stock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                    "url": "https://kalanganhandmade.in/products"
+                }
+            }
         }))
     };
 
@@ -217,6 +234,9 @@ export default function Products() {
                             Handmade Collection
                         </h1>
                         <p className="text-gray-600 text-sm sm:text-base px-4">Wedding Frames, Nameplates, Birthday Gifts, Customized Frames, Fridge Magnets & Keychains</p>
+                        <p className="sr-only">
+                            Kalangan offers handmade gifts online in India, including personalized wedding frames, custom nameplates, birthday gifts, photo frames, fridge magnets, keychains, return gifts, anniversary gifts, engagement gifts, housewarming gifts, and custom handmade keepsakes with Pan India delivery.
+                        </p>
                     </div>
 
                     {/* Category Pills */}
@@ -261,17 +281,18 @@ export default function Products() {
                                 </div>
                             ) : (
                                 products.map((product, idx) => (
-                                    <div
+                                    <article
                                         key={product.id}
-                                        className={`glass-card rounded-2xl overflow-hidden animate-scale-in transition-all ${product.in_stock ? 'hover-lift cursor-pointer group' : 'opacity-80'}`}
+                                        className={`product-card glass-card rounded-2xl overflow-hidden animate-scale-in transition-all ${product.in_stock ? 'hover-lift cursor-pointer group' : 'opacity-80'}`}
                                         style={{ animationDelay: `${idx * 0.05}s` }}
                                         onClick={() => product.in_stock && setSelectedProductDetail(product)}
                                     >
-                                        <div className="relative aspect-square overflow-hidden">
+                                        <div className="product-image-stage relative aspect-[4/5] overflow-hidden">
                                             <img
                                                 src={product.image_url || '/jewelry.webp'}
-                                                alt={product.name}
-                                                className={`w-full h-full object-cover transition-transform duration-500 ${product.in_stock ? 'group-hover:scale-110' : 'grayscale'}`}
+                                                alt={`${product.name} handmade customized gift by Kalangan`}
+                                                className={`product-image w-full h-full object-contain transition-transform duration-500 ${product.in_stock ? 'group-hover:scale-105' : 'grayscale'}`}
+                                                loading={idx < 4 ? 'eager' : 'lazy'}
                                             />
 
                                             {/* Out of Stock Badge */}
@@ -322,7 +343,7 @@ export default function Products() {
                                                     className="w-full py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all"
                                                     style={{ backgroundColor: 'rgba(139,0,0,0.1)', color: '#8B0000' }}
                                                 >
-                                                    Selected ✓
+                                                    Selected
                                                 </button>
                                             ) : (
                                                 <button
@@ -337,7 +358,7 @@ export default function Products() {
                                                 </button>
                                             )}
                                         </div>
-                                    </div>
+                                    </article>
                                 ))
                             )}
                         </div>
@@ -459,10 +480,7 @@ export default function Products() {
                                     onClick={resetImagePosition}
                                     className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-gray-800 shadow-md hover:scale-110 transition-all"
                                 >
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                                        <path d="M3 3v5h5" />
-                                    </svg>
+                                    <RotateCcw size={16} />
                                 </button>
                             )}
                         </div>
@@ -485,7 +503,7 @@ export default function Products() {
 
                                     {(selectedProductDetail.show_price !== false && selectedProductDetail.price > 0) && (
                                         <p className="text-2xl font-bold" style={{ color: '#D4AF37' }}>
-                                            ₹{selectedProductDetail.price.toLocaleString()}
+                                            Rs. {selectedProductDetail.price.toLocaleString()}
                                         </p>
                                     )}
 

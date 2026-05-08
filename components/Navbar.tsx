@@ -38,7 +38,7 @@ export default function Navbar() {
                         <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white shadow-md border border-[#D4AF37]/20 group-hover:scale-105 transition-transform duration-300">
                             <img
                                 src="/logo.png"
-                                alt="Kalangan"
+                                alt="Kalangan Handmade - कलांगण"
                                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                             />
                         </div>
