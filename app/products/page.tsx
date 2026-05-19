@@ -22,7 +22,147 @@ interface Product {
     best_seller: boolean;
     show_description?: boolean;
     show_price?: boolean;
+    created_at?: string;
 }
+
+const staticProducts: Product[] = [
+    {
+        id: 'd1f7b4c2-9b11-4eaa-ae7c-1a7d11c9f001',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 8 by 8 inch',
+        show_description: true,
+        image_url: '/4.webp',
+        best_seller: true,
+        price: 550.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T18:56:00+00:00',
+    },
+    {
+        id: 'e3c8a7d5-4f77-4b0d-92d0-2cb4e3c5f002',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 6 by 8 inch',
+        show_description: true,
+        image_url: '/5.webp',
+        best_seller: true,
+        price: 550.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T18:58:00+00:00',
+    },
+    {
+        id: 'f7a4d3c1-3e6a-4a8d-b2a1-5cb6d4f9f003',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 8 by 8 inch',
+        show_description: true,
+        image_url: '/6.webp',
+        best_seller: true,
+        price: 550.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T18:58:30+00:00',
+    },
+    {
+        id: 'a6d2e9b8-11fc-4cba-b9b1-7fd2b7c4f004',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 5 by 7 inch',
+        show_description: true,
+        image_url: '/7.webp',
+        best_seller: false,
+        price: 450.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T18:59:00+00:00',
+    },
+    {
+        id: 'b5c7d8e1-0f2b-4d6a-a3e1-8ad4c9f2f005',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 4 by 4 inch',
+        show_description: true,
+        image_url: '/8.webp',
+        best_seller: false,
+        price: 250.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T18:59:30+00:00',
+    },
+    {
+        id: 'c8f1e2d4-2b4a-45f8-b8f7-9bc1d7e6f006',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 8 by 8 inch',
+        show_description: true,
+        image_url: '/9.webp',
+        best_seller: true,
+        price: 550.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T19:00:00+00:00',
+    },
+    {
+        id: 'd9e4f5a6-3c2b-4f8c-8ab7-afd4e8b1f007',
+        name: 'Customized Pop-Up Frame',
+        description: 'Size - 6 by 8 inch',
+        show_description: true,
+        image_url: '/4.webp',
+        best_seller: true,
+        price: 550.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T19:01:00+00:00',
+    },
+    {
+        id: 'e1b2c3d4-5f6a-4789-b1c2-d3e4f5a6b008',
+        name: 'Combo Set of 3 Frames',
+        description: 'Size - 12 by 18 inch\r\nCustomization Available\r\nDecorate your hall with our customizable frames - crafted to make every space perfect.',
+        show_description: true,
+        image_url: '/5.webp',
+        best_seller: true,
+        price: 2999.00,
+        in_stock: true,
+        category_id: 'de8b50bb-3d9b-41ab-a341-d88064dea232', // Wedding Frames
+        created_at: '2026-05-13T19:05:00+00:00',
+    },
+    {
+        id: 'f2c3d4e5-6a7b-4890-c1d2-e3f4a5b6c009',
+        name: 'Customized Batches for Wedding',
+        description: 'Customization Available for Wedding Events',
+        show_description: true,
+        image_url: '/6.webp',
+        best_seller: false,
+        price: 80.00,
+        in_stock: true,
+        category_id: 'f42f2304-89d3-4c78-964f-71bc779532ae', // Magnets (representing Batches)
+        created_at: '2026-05-13T19:14:00+00:00',
+    },
+    {
+        id: 'a3d4e5f6-7b8c-4901-d2e3-f4a5b6c7d010',
+        name: 'Customized Batches for Special Occasion',
+        description: 'Customization Available for Special Occasions',
+        show_description: true,
+        image_url: '/7.webp',
+        best_seller: false,
+        price: 80.00,
+        in_stock: true,
+        category_id: 'f42f2304-89d3-4c78-964f-71bc779532ae', // Magnets (representing Batches)
+        created_at: '2026-05-13T19:15:00+00:00',
+    },
+];
+
+const getStaticProducts = (categoryId: string | 'Best Seller') => {
+    if (categoryId === 'Best Seller') {
+        return staticProducts.filter(product => product.best_seller);
+    }
+
+    return staticProducts.filter(product => product.category_id === categoryId);
+};
+
+const mergeProducts = (apiProducts: Product[], localProducts: Product[]) => {
+    const productMap = new Map<string, Product>();
+    [...apiProducts, ...localProducts].forEach(product => {
+        productMap.set(product.id, product);
+    });
+    return Array.from(productMap.values());
+};
 
 export default function Products() {
     const [showWhatsApp, setShowWhatsApp] = useState(false);
@@ -52,7 +192,7 @@ export default function Products() {
                 supabaseService.getProductsByCategory(null, true)
             ]);
             setCategories(cats);
-            setProducts(bestsellers);
+            setProducts(mergeProducts(bestsellers, getStaticProducts('Best Seller')));
         } catch (error) {
             console.error('Failed to load data:', error);
         } finally {
@@ -68,7 +208,7 @@ export default function Products() {
                 catId === 'Best Seller' ? null : catId,
                 catId === 'Best Seller'
             );
-            setProducts(data);
+            setProducts(mergeProducts(data, getStaticProducts(catId)));
         } catch (error) {
             console.error('Failed to load products:', error);
         } finally {
