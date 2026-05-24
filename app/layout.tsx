@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   description: 'Kalangan Handmade, also known as कलांगण, is a handmade gift business in Mumbai offering wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, keychains and return gifts with Pan India delivery.',
   alternates: {
     canonical: '/',
+    languages: {
+      'en-IN': '/',
+      'x-default': '/',
+    },
   },
   keywords: [
     // Product-specific keywords
@@ -37,6 +41,11 @@ export const metadata: Metadata = {
     'customized frames online',
     'photo frame customization',
     'personalized picture frames',
+    'table top frames',
+    'table top handmade gifts',
+    'devotional table top frames',
+    'Vitthal Mauli table top',
+    'Shree Swami Samarth table top',
     'fridge magnets online India',
     'customized fridge magnets',
     'handmade fridge magnets',
@@ -215,6 +224,9 @@ export const metadata: Metadata = {
     // Material specific
     'wooden photo frames customized',
     'acrylic nameplate designs',
+    'handmade craft frames',
+    'handmade tabletop frames',
+    'custom devotional frames India',
     'resin fridge magnets handmade',
     'metal keychains personalized',
     'wooden handmade gifts India',
@@ -270,6 +282,10 @@ export const metadata: Metadata = {
     'application-name': 'Kalangan Handmade',
     'apple-mobile-web-app-title': 'Kalangan Handmade',
     'business-name': 'Kalangan Handmade',
+    'business:contact_data:locality': 'Mumbai',
+    'business:contact_data:region': 'Maharashtra',
+    'business:contact_data:country_name': 'India',
+    'product:category': 'Handmade gifts, handmade craft frames, customized frames, table top frames',
   },
   robots: {
     index: true,
@@ -341,32 +357,44 @@ export default function RootLayout({
         {
           "@type": "OfferCatalog",
           "name": "Wedding Frames",
-          "description": "Handmade customized wedding frames for couples"
+          "description": "Handmade customized wedding frames for couples",
+          "url": "https://kalanganhandmade.in/products"
         },
         {
           "@type": "OfferCatalog",
           "name": "Nameplates",
-          "description": "Personalized nameplates for home and office"
+          "description": "Personalized nameplates for home and office",
+          "url": "https://kalanganhandmade.in/products"
         },
         {
           "@type": "OfferCatalog",
           "name": "Birthday Gifts",
-          "description": "Customized handmade birthday gift items"
+          "description": "Customized handmade birthday gift items",
+          "url": "https://kalanganhandmade.in/products"
         },
         {
           "@type": "OfferCatalog",
           "name": "Customized Frames",
-          "description": "Personalized photo frames with names and designs"
+          "description": "Personalized photo frames with names and designs",
+          "url": "https://kalanganhandmade.in/products"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Table Top Frames",
+          "description": "Handmade table top frames and devotional table top gifts",
+          "url": "https://kalanganhandmade.in/products"
         },
         {
           "@type": "OfferCatalog",
           "name": "Fridge Magnets",
-          "description": "Handcrafted customized fridge magnets"
+          "description": "Handcrafted customized fridge magnets",
+          "url": "https://kalanganhandmade.in/products"
         },
         {
           "@type": "OfferCatalog",
           "name": "Keychains",
-          "description": "Personalized keychains for all occasions"
+          "description": "Personalized keychains for all occasions",
+          "url": "https://kalanganhandmade.in/products"
         }
       ]
     }
@@ -418,6 +446,9 @@ export default function RootLayout({
           "personalized nameplates",
           "birthday gifts",
           "photo frames",
+          "table top frames",
+          "handmade craft frames",
+          "devotional table top gifts",
           "fridge magnets",
           "keychains",
           "return gifts",

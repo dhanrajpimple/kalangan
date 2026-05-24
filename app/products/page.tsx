@@ -134,6 +134,30 @@ const staticProducts: Product[] = [
         category_id: '56fe919b-a8a8-44f2-b694-bbf7d219c1c9', // Batches
         created_at: '2026-05-23T10:08:00+00:00',
     },
+    {
+        id: 'static-table-top-10',
+        name: 'Vitthal Mauli',
+        description: 'Size - 4 inch\r\nCustomization Available',
+        show_description: true,
+        image_url: '/10.webp',
+        best_seller: true,
+        price: 175.00,
+        in_stock: true,
+        category_id: '98c4217c-dba9-4737-81df-8af08d7b8871', // Table Top
+        created_at: '2026-05-23T10:09:00+00:00',
+    },
+    {
+        id: 'static-table-top-11',
+        name: 'Shree Swami Samarth',
+        description: 'Size - 4 inch\r\nCustomization Available',
+        show_description: true,
+        image_url: '/11.webp',
+        best_seller: true,
+        price: 175.00,
+        in_stock: true,
+        category_id: '98c4217c-dba9-4737-81df-8af08d7b8871', // Table Top
+        created_at: '2026-05-23T10:10:00+00:00',
+    },
 ];
 
 const getStaticProducts = (categoryId: string | 'Best Seller') => {
@@ -275,33 +299,45 @@ export default function Products() {
     }, [selectedProductDetail]);
 
     const totalSelectedCount = Object.keys(selectedItems).length;
+    const selectedCategoryName = selectedCategory === 'Best Seller'
+        ? 'Best Selling Handmade Gifts'
+        : categories.find(cat => cat.id === selectedCategory)?.category_name || 'Handmade Gifts';
+    const getAbsoluteImageUrl = (imageUrl: string) => {
+        if (!imageUrl) return 'https://kalanganhandmade.in/logo.png';
+        return imageUrl.startsWith('http') ? imageUrl : `https://kalanganhandmade.in${imageUrl}`;
+    };
 
     // Structured Data for SEO
     const itemListSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": selectedCategory === 'Best Seller' ? "Best Selling Handmade Gifts" : `${selectedCategory} Collection`,
-        "description": "Discover our exquisite collection of handmade wedding frames, customized nameplates, birthday gifts, personalized photo frames, fridge magnets, and keychains. Premium handcrafted gifts for all occasions.",
+        "name": selectedCategoryName,
+        "description": "Discover Kalangan Handmade products including handmade craft frames, table top frames, wedding frames, customized nameplates, personalized photo frames, fridge magnets, keychains and return gifts.",
         "itemListElement": products.map((product, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "url": `https://kalanganhandmade.in/products`,
             "name": product.name,
-            "image": product.image_url,
+            "image": getAbsoluteImageUrl(product.image_url),
             "item": {
                 "@type": "Product",
+                "@id": `https://kalanganhandmade.in/products#${product.id}`,
                 "name": product.name,
                 "description": product.description || "Handmade customized gift by Kalangan",
-                "image": product.image_url,
+                "image": getAbsoluteImageUrl(product.image_url),
+                "sku": product.id,
                 "brand": {
                     "@type": "Brand",
-                    "name": "Kalangan"
+                    "@id": "https://kalanganhandmade.in/#business",
+                    "name": "Kalangan Handmade"
                 },
-                "category": "Handmade gifts",
+                "category": selectedCategoryName,
                 "offers": {
                     "@type": "Offer",
+                    "price": product.price,
                     "priceCurrency": "INR",
                     "availability": product.in_stock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                    "itemCondition": "https://schema.org/NewCondition",
                     "url": "https://kalanganhandmade.in/products"
                 }
             }

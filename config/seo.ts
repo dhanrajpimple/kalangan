@@ -44,6 +44,11 @@ export const PRODUCT_CATEGORIES = [
         description: 'Personalized photo frames with names and designs',
     },
     {
+        name: 'Table Top Frames',
+        keywords: ['table top frames', 'handmade table top frames', 'devotional table top gifts', 'handmade craft frames'],
+        description: 'Handmade table top frames and devotional handmade gifts',
+    },
+    {
         name: 'Fridge Magnets',
         keywords: ['fridge magnets online India', 'customized fridge magnets', 'handmade fridge magnets', 'wedding return gift magnets'],
         description: 'Handcrafted customized fridge magnets',
@@ -61,6 +66,9 @@ export const LONG_TAIL_KEYWORDS = [
     'customized nameplate for home door',
     'personalized birthday gift ideas India',
     'handcrafted photo frames with names',
+    'handmade craft frames for home decor',
+    'buy handmade table top frames online India',
+    'custom devotional table top frame online',
     'custom fridge magnets for wedding return gifts',
     'personalized keychains for couples',
     'wooden nameplate designs for home',
