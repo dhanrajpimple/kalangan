@@ -141,7 +141,7 @@ const staticProducts: Product[] = [
         show_description: true,
         image_url: '/10.webp',
         best_seller: true,
-        price: 175.00,
+        price: 250.00,
         in_stock: true,
         category_id: '98c4217c-dba9-4737-81df-8af08d7b8871', // Table Top
         created_at: '2026-05-23T10:09:00+00:00',
