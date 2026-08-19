@@ -2,7 +2,7 @@ export const supabaseService = {
     supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
     supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
 
-    async fetchRpc(rpcName: string, body: any = {}) {
+    async fetchRpc(rpcName: string, body: Record<string, unknown> = {}) {
         try {
             const response = await fetch(`${this.supabaseUrl}/rest/v1/rpc/${rpcName}`, {
                 method: 'POST',

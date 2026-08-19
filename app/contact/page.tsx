@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MessageCircle, Phone, Mail, ChevronDown, MapPin, Clock, Shield, Truck } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -23,11 +23,6 @@ const FAQS = [
 
 export default function Contact() {
     const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-    const [showWhatsApp, setShowWhatsApp] = useState(false);
-
-    useEffect(() => {
-        setShowWhatsApp(true);
-    }, []);
 
     const toggleFaq = (index: number) => {
         setExpandedFaq(expandedFaq === index ? null : index);
@@ -69,7 +64,7 @@ export default function Contact() {
             <Navbar />
 
             {/* WhatsApp Floating Button */}
-            {showWhatsApp && (
+            {(
                 <a
                     href="https://wa.me/919833291030"
                     target="_blank"
@@ -88,10 +83,10 @@ export default function Contact() {
                     {/* Header */}
                     <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4" style={{ color: '#8B0000' }}>
-                            Let's Connect
+                            Let&apos;s Connect
                         </h1>
                         <p className="text-base sm:text-lg text-gray-600 max-w-md mx-auto">
-                            We're here to help. Reach out anytime!
+                            We&apos;re here to help. Reach out anytime!
                         </p>
                     </div>
 

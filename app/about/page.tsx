@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, Heart, Leaf, Palette, Truck, Shield, Users } from 'lucide-react';
+import React from 'react';
+import { MessageCircle, Heart, Palette, Shield, Users } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ReviewsMarquee from '@/components/ReviewsMarquee';
@@ -14,12 +14,6 @@ const FEATURES = [
 ];
 
 export default function About() {
-    const [showWhatsApp, setShowWhatsApp] = useState(false);
-
-    useEffect(() => {
-        setShowWhatsApp(true);
-    }, []);
-
     // Breadcrumb Schema
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -62,7 +56,7 @@ export default function About() {
             <Navbar />
 
             {/* WhatsApp Floating Button */}
-            {showWhatsApp && (
+            {(
                 <a
                     href="https://wa.me/919833291030"
                     target="_blank"
@@ -115,7 +109,7 @@ export default function About() {
                                We provide meaningful return gifts for weddings, engagements, housewarmings, festivals, baby showers, haldi-kunku, anniversaries, and other special occasions. Every product is carefully customized to reflect your story and make each gift truly memorable.
                             </p>
                             <p className="text-gray-600 leading-relaxed">
-                                At कलांगण, we don’t just make gifts. We create keepsakes filled with love, warmth, and artistry, adding a personal touch to every celebration.
+                                At कलांगण, we don&apos;t just make gifts. We create keepsakes filled with love, warmth, and artistry, adding a personal touch to every celebration.
                             </p>
                             <div className="space-y-2 pt-2">
                                 <p className="flex items-center gap-2 text-gray-700 font-medium">✨ Handmade with love</p>
@@ -168,7 +162,7 @@ export default function About() {
                             Ready to order?
                         </h2>
                         <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                            Get your personalized piece today. We'll craft something special just for you.
+                            Get your personalized piece today. We&apos;ll craft something special just for you.
                         </p>
                         <a
                             href="https://wa.me/919833291030"

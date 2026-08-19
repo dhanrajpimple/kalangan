@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, MessageCircle, Sparkles, Heart, Package } from 'lucide-react';
 import Footer from '@/components/Footer';
@@ -8,8 +8,6 @@ import Navbar from '@/components/Navbar';
 import ReviewsMarquee from '@/components/ReviewsMarquee';
 
 export default function Home() {
-  const [showWhatsApp, setShowWhatsApp] = useState(true);
-
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Main Content - Shows immediately */}
@@ -21,7 +19,7 @@ export default function Home() {
         <Navbar />
 
         {/* WhatsApp Floating Button */}
-        {showWhatsApp && (
+        {(
           <a
             href="https://wa.me/919833291030"
             target="_blank"

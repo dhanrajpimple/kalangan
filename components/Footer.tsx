@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Instagram, MessageCircle, Mail, Phone, MapPin, ExternalLink, Heart } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -50,10 +50,10 @@ export default function Footer() {
                     <div className="space-y-6">
                         <h4 className="text-[#D4AF37] font-bold text-sm uppercase tracking-widest">Explore</h4>
                         <ul className="grid grid-cols-1 gap-3">
-                            {['Home', 'About', 'Products', 'Contact'].map(item => (
-                                <li key={item}>
+                            {[['Home', '/'], ['Products', '/products'], ['Custom Frames', '/customized-frames'], ['Tabletop Frames', '/table-top-frames'], ['Nameplates', '/customized-nameplates'], ['Wedding Frames', '/wedding-gift-frames'], ['Custom Magnets', '/customized-magnets']].map(([item, href]) => (
+                                <li key={href}>
                                     <Link
-                                        href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                                        href={href}
                                         className="text-white/60 hover:text-white text-sm transition-colors flex items-center gap-2 group"
                                     >
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors" />

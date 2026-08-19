@@ -177,7 +177,7 @@ const mergeProducts = (apiProducts: Product[], localProducts: Product[]) => {
 };
 
 export default function Products() {
-    const [showWhatsApp, setShowWhatsApp] = useState(false);
+    const [showWhatsApp] = useState(true);
     const [products, setProducts] = useState<Product[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | 'Best Seller'>('Best Seller');
@@ -192,25 +192,22 @@ export default function Products() {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        setShowWhatsApp(true);
-        loadInitialData();
+        const loadInitialData = async () => {
+            try {
+                const [cats, bestsellers] = await Promise.all([
+                    supabaseService.getCategories(),
+                    supabaseService.getProductsByCategory(null, true)
+                ]);
+                setCategories(cats);
+                setProducts(mergeProducts(bestsellers, getStaticProducts('Best Seller')));
+            } catch (error) {
+                console.error('Failed to load data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        void loadInitialData();
     }, []);
-
-    const loadInitialData = async () => {
-        try {
-            setLoading(true);
-            const [cats, bestsellers] = await Promise.all([
-                supabaseService.getCategories(),
-                supabaseService.getProductsByCategory(null, true)
-            ]);
-            setCategories(cats);
-            setProducts(mergeProducts(bestsellers, getStaticProducts('Best Seller')));
-        } catch (error) {
-            console.error('Failed to load data:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const handleCategoryChange = async (catId: string | 'Best Seller') => {
         setSelectedCategory(catId);
@@ -293,10 +290,6 @@ export default function Products() {
     const resetImagePosition = () => {
         setImagePosition({ x: 0, y: 0 });
     };
-
-    useEffect(() => {
-        resetImagePosition();
-    }, [selectedProductDetail]);
 
     const totalSelectedCount = Object.keys(selectedItems).length;
     const selectedCategoryName = selectedCategory === 'Best Seller'
@@ -449,7 +442,12 @@ export default function Products() {
                                         key={product.id}
                                         className={`product-card glass-card rounded-2xl overflow-hidden animate-scale-in transition-all ${product.in_stock ? 'hover-lift cursor-pointer group' : 'opacity-80'}`}
                                         style={{ animationDelay: `${idx * 0.05}s` }}
-                                        onClick={() => product.in_stock && setSelectedProductDetail(product)}
+                                        onClick={() => {
+                                            if (product.in_stock) {
+                                                resetImagePosition();
+                                                setSelectedProductDetail(product);
+                                            }
+                                        }}
                                     >
                                         <div className="product-image-stage relative aspect-[4/5] overflow-hidden">
                                             <img

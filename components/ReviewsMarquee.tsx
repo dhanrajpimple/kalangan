@@ -61,7 +61,7 @@ export default function ReviewsMarquee() {
                             </div>
 
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6 font-medium italic">
-                                "{review.text}"
+                                &ldquo;{review.text}&rdquo;
                             </p>
 
                             <div className="flex items-center gap-3">
