@@ -277,6 +277,7 @@ export default async function ProductsPage({
 
                     {/* Interactive client part: categories, grid, modals */}
                     <ProductsClient
+                        key={requestedCategory || 'best-seller'}
                         initialProducts={allProducts}
                         initialCategories={categories}
                         staticProducts={staticProducts}

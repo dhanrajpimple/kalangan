@@ -119,6 +119,7 @@ export default function Navbar() {
                                             <Link
                                                 key={link.href}
                                                 href={link.href}
+                                                onClick={() => setShowCategories(false)}
                                                 className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-[#8B0000]/5 hover:text-[#8B0000] transition-colors font-medium"
                                             >
                                                 {link.label}
