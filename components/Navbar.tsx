@@ -6,10 +6,21 @@ import Link from 'next/link';
 import { Menu, X, ShoppingBag, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+type CategoryLink = { href: string; label: string };
+
+const fallbackCategoryLinks: CategoryLink[] = [
+    { href: '/customized-frames', label: 'Custom Frames' },
+    { href: '/table-top-frames', label: 'Table Top Frames' },
+    { href: '/customized-nameplates', label: 'Nameplates' },
+    { href: '/wedding-gift-frames', label: 'Wedding Frames' },
+    { href: '/customized-magnets', label: 'Custom Magnets' },
+];
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [showCategories, setShowCategories] = useState(false);
+    const [categoryLinks, setCategoryLinks] = useState<CategoryLink[]>(fallbackCategoryLinks);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,19 +28,33 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        let active = true;
+
+        const loadCategories = async () => {
+            try {
+                const { supabaseService } = await import('@/services/supabaseService');
+                const categories = await supabaseService.getCategories();
+                if (active && Array.isArray(categories) && categories.length > 0) {
+                    setCategoryLinks(categories.map(category => ({
+                        href: `/products?category=${encodeURIComponent(category.id)}`,
+                        label: category.category_name,
+                    })));
+                }
+            } catch (error) {
+                console.error('Failed to load navigation categories:', error);
+            }
+        };
+
+        void loadCategories();
+        return () => { active = false; };
+    }, []);
+
     const navLinks = [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
         { href: '/products', label: 'Products' },
         { href: '/contact', label: 'Contact' },
-    ];
-
-    const categoryLinks = [
-        { href: '/customized-frames', label: 'Custom Frames' },
-        { href: '/table-top-frames', label: 'Table Top Frames' },
-        { href: '/customized-nameplates', label: 'Nameplates' },
-        { href: '/wedding-gift-frames', label: 'Wedding Frames' },
-        { href: '/customized-magnets', label: 'Custom Magnets' },
     ];
 
     return (

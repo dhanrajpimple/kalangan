@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getCategories, getProductsByCategory } from '@/services/supabaseServer';
 
 export type CategoryContent = {
   slug: string;
@@ -33,7 +34,40 @@ export const categoryMetadata = (category: CategoryContent): Metadata => ({
   twitter: { card: 'summary_large_image', title: category.title, description: category.description, images: [category.image] },
 });
 
-export default function CategoryLanding({ category }: { category: CategoryContent }) {
+const categorySearchTerms: Record<string, string[]> = {
+  'customized-frames': ['customized frame', 'custom frame', 'pop up frame', 'photo frame'],
+  'table-top-frames': ['table top', 'tabletop'],
+  'customized-nameplates': ['nameplate', 'name plate'],
+  'wedding-gift-frames': ['wedding frame', 'gift frame', 'wedding'],
+  'customized-magnets': ['magnet', 'fridge magnet'],
+};
+
+function normalize(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+export default async function CategoryLanding({ category }: { category: CategoryContent }) {
+  const apiCategories = await getCategories();
+  const terms = categorySearchTerms[category.slug] ?? [category.name];
+  const matchedCategory = apiCategories.find(apiCategory => {
+    const apiName = normalize(apiCategory.category_name);
+    return terms.some(term => {
+      const normalizedTerm = normalize(term);
+      return apiName.includes(normalizedTerm) || normalizedTerm.includes(apiName);
+    });
+  });
+
+  const apiProducts = matchedCategory
+    ? await getProductsByCategory(matchedCategory.id, false)
+    : [];
+  const firstProductWithImage = apiProducts.find(product => Boolean(product.image_url));
+  const heroImage = firstProductWithImage?.image_url || category.image;
+  const heroAlt = firstProductWithImage
+    ? `${firstProductWithImage.name} from ${category.name} by Kalangan Handmade`
+    : category.imageAlt;
+  const absoluteHeroImage = heroImage.startsWith('http')
+    ? heroImage
+    : `https://kalanganhandmade.in${heroImage}`;
   const url = `https://kalanganhandmade.in/${category.slug}`;
   const schema = {
     '@context': 'https://schema.org',
@@ -41,7 +75,7 @@ export default function CategoryLanding({ category }: { category: CategoryConten
       {
         '@type': 'CollectionPage', '@id': `${url}/#page`, url, name: category.title,
         description: category.description, isPartOf: { '@id': 'https://kalanganhandmade.in/#website' },
-        primaryImageOfPage: { '@type': 'ImageObject', url: `https://kalanganhandmade.in${category.image}`, caption: category.imageAlt },
+        primaryImageOfPage: { '@type': 'ImageObject', url: absoluteHeroImage, caption: heroAlt },
       },
       {
         '@type': 'FAQPage', mainEntity: category.faqs.map(([question, answer]) => ({
@@ -69,12 +103,12 @@ export default function CategoryLanding({ category }: { category: CategoryConten
               <h1 className="text-4xl sm:text-6xl font-black text-[#8B0000] mb-6">{category.title}</h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">{category.intro}</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/products" className="btn-primary rounded-full px-7 py-4 text-white font-bold text-center">Browse the Collection</Link>
+                <Link href={matchedCategory ? `/products?category=${encodeURIComponent(matchedCategory.id)}` : '/products'} className="btn-primary rounded-full px-7 py-4 text-white font-bold text-center">Browse the Collection</Link>
                 <a href={`https://wa.me/919833291030?text=${encodeURIComponent(`Hi, I want to order ${category.name.toLowerCase()}.`)}`} target="_blank" rel="noopener noreferrer" className="rounded-full px-7 py-4 bg-[#25D366] text-white font-bold inline-flex justify-center items-center gap-2"><MessageCircle size={20} />Customize on WhatsApp</a>
               </div>
             </div>
             <div className="glass-card rounded-[2rem] p-4 aspect-square relative">
-              <Image src={category.image} alt={category.imageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain rounded-2xl" priority />
+              <Image src={heroImage} alt={heroAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain rounded-2xl" priority />
             </div>
           </div>
         </section>

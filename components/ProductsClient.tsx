@@ -30,6 +30,7 @@ interface ProductsClientProps {
     initialProducts: Product[];
     initialCategories: Category[];
     staticProducts: Product[];
+    initialSelectedCategory?: string | 'Best Seller';
 }
 
 const getStaticProducts = (staticProducts: Product[], categoryId: string | 'Best Seller') => {
@@ -47,10 +48,10 @@ const mergeProducts = (apiProducts: Product[], localProducts: Product[]) => {
     return Array.from(productMap.values());
 };
 
-export default function ProductsClient({ initialProducts, initialCategories, staticProducts }: ProductsClientProps) {
+export default function ProductsClient({ initialProducts, initialCategories, staticProducts, initialSelectedCategory = 'Best Seller' }: ProductsClientProps) {
     const [products, setProducts] = useState<Product[]>(initialProducts);
     const [categories] = useState<Category[]>(initialCategories);
-    const [selectedCategory, setSelectedCategory] = useState<string | 'Best Seller'>('Best Seller');
+    const [selectedCategory, setSelectedCategory] = useState<string | 'Best Seller'>(initialSelectedCategory);
     const [loading, setLoading] = useState(false);
     const [selectedItems, setSelectedItems] = useState<Record<string, { product: Product, qty: number }>>({});
     const [selectedProductDetail, setSelectedProductDetail] = useState<Product | null>(null);

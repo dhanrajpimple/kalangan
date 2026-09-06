@@ -173,21 +173,32 @@ function mergeProducts(apiProducts: Product[], localProducts: Product[]): Produc
 }
 
 // --- Server Component ---
-export default async function ProductsPage() {
+export default async function ProductsPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ category?: string }>;
+}) {
+    const { category: requestedCategory } = await searchParams;
+
     // Fetch data on the server — this HTML is sent to crawlers
     const [categories, apiProducts] = await Promise.all([
         getCategories(),
-        getProductsByCategory(null, true),
+        getProductsByCategory(requestedCategory || null, !requestedCategory),
     ]);
 
-    const bestSellerStatic = staticProducts.filter(p => p.best_seller);
-    const allProducts = mergeProducts(apiProducts, bestSellerStatic);
+    const matchingStaticProducts = requestedCategory
+        ? staticProducts.filter(product => product.category_id === requestedCategory)
+        : staticProducts.filter(product => product.best_seller);
+    const allProducts = mergeProducts(apiProducts, matchingStaticProducts);
+    const selectedCategoryName = requestedCategory
+        ? categories.find(category => category.id === requestedCategory)?.category_name || 'Handmade Gifts'
+        : 'Best Selling Handmade Gifts';
 
     // Server-rendered JSON-LD with real product data
     const itemListSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Best Selling Handmade Gifts",
+        "name": selectedCategoryName,
         "description": "Discover Kalangan Handmade products including handmade craft frames, table top frames, wedding frames, customized nameplates, personalized photo frames, fridge magnets, keychains and return gifts.",
         "numberOfItems": allProducts.length,
         "itemListElement": allProducts.map((product, index) => ({
@@ -269,6 +280,7 @@ export default async function ProductsPage() {
                         initialProducts={allProducts}
                         initialCategories={categories}
                         staticProducts={staticProducts}
+                        initialSelectedCategory={requestedCategory || 'Best Seller'}
                     />
                 </div>
             </section>

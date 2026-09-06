@@ -9,7 +9,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 const REVALIDATE_SECONDS = 3600; // 1 hour cache
 
-interface Category {
+export interface Category {
     id: string;
     category_name: string;
 }
