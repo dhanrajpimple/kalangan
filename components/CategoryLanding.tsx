@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -72,8 +73,8 @@ export default function CategoryLanding({ category }: { category: CategoryConten
                 <a href={`https://wa.me/919833291030?text=${encodeURIComponent(`Hi, I want to order ${category.name.toLowerCase()}.`)}`} target="_blank" rel="noopener noreferrer" className="rounded-full px-7 py-4 bg-[#25D366] text-white font-bold inline-flex justify-center items-center gap-2"><MessageCircle size={20} />Customize on WhatsApp</a>
               </div>
             </div>
-            <div className="glass-card rounded-[2rem] p-4 aspect-square">
-              <img src={category.image} alt={category.imageAlt} className="w-full h-full object-contain rounded-2xl" />
+            <div className="glass-card rounded-[2rem] p-4 aspect-square relative">
+              <Image src={category.image} alt={category.imageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain rounded-2xl" priority />
             </div>
           </div>
         </section>

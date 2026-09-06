@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function BackgroundDecor() {
     // Images are now static in the background as per user request to stop animation
@@ -17,10 +18,13 @@ export default function BackgroundDecor() {
                     filter: 'grayscale(20%) sepia(20%)'
                 }}
             >
-                <img
+                <Image
                     src="/right.png"
-                    alt="Decorative Right"
+                    alt=""
+                    width={600}
+                    height={800}
                     className="w-[250px] sm:w-[350px] md:w-[600px] object-contain max-h-[85vh]"
+                    aria-hidden="true"
                 />
             </div>
 
@@ -34,10 +38,13 @@ export default function BackgroundDecor() {
                     filter: 'grayscale(20%) sepia(20%)'
                 }}
             >
-                <img
+                <Image
                     src="/left.png"
-                    alt="Decorative Left"
+                    alt=""
+                    width={600}
+                    height={800}
                     className="w-[250px] sm:w-[350px] md:w-[600px] object-contain max-h-[85vh]"
+                    aria-hidden="true"
                 />
             </div>
 

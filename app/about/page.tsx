@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { MessageCircle, Heart, Palette, Shield, Users } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -88,11 +89,13 @@ export default function About() {
                         <div className="order-2 lg:order-1 flex justify-center">
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#D4AF37]/20 to-[#8B0000]/20 blur-2xl transform scale-110" />
-                                <img
+                                <Image
                                     src="/aboutus.webp"
-                                    alt="Our Craft"
-                                    className="relative w-full max-w-sm h-auto drop-shadow-2xl"
-                                    style={{ maxHeight: '450px', objectFit: 'contain' }}
+                                    alt="Kalangan Handmade workshop - crafting personalized frames and gifts"
+                                    width={400}
+                                    height={450}
+                                    className="relative w-full max-w-sm h-auto drop-shadow-2xl object-contain"
+                                    priority
                                 />
                             </div>
                         </div>

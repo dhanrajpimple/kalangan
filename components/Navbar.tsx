@@ -1,13 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingBag, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [showCategories, setShowCategories] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -19,8 +21,15 @@ export default function Navbar() {
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
         { href: '/products', label: 'Products' },
-        { href: '/customized-frames', label: 'Custom Frames' },
         { href: '/contact', label: 'Contact' },
+    ];
+
+    const categoryLinks = [
+        { href: '/customized-frames', label: 'Custom Frames' },
+        { href: '/table-top-frames', label: 'Table Top Frames' },
+        { href: '/customized-nameplates', label: 'Nameplates' },
+        { href: '/wedding-gift-frames', label: 'Wedding Frames' },
+        { href: '/customized-magnets', label: 'Custom Magnets' },
     ];
 
     return (
@@ -34,13 +43,16 @@ export default function Navbar() {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex items-center justify-between">
 
-                    {/* Logo - Premium & Visible */}
+                    {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group z-50">
                         <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white shadow-md border border-[#D4AF37]/20 group-hover:scale-105 transition-transform duration-300">
-                            <img
+                            <Image
                                 src="/logo.png"
                                 alt="Kalangan Handmade - कलांगण"
+                                width={40}
+                                height={40}
                                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                                priority
                             />
                         </div>
                         <span className="text-xl sm:text-2xl font-black tracking-tighter text-[#8B0000]">
@@ -48,8 +60,8 @@ export default function Navbar() {
                         </span>
                     </Link>
 
-                    {/* Desktop Navigation - Centered & Tight */}
-                    <div className="hidden md:flex items-center gap-10 bg-white/50 backdrop-blur-sm px-8 py-2.5 rounded-full border border-white/50 shadow-sm">
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-sm px-8 py-2.5 rounded-full border border-white/50 shadow-sm">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
@@ -60,6 +72,37 @@ export default function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#8B0000] transition-all duration-300 group-hover:w-full" />
                             </Link>
                         ))}
+                        {/* Categories dropdown */}
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setShowCategories(true)}
+                            onMouseLeave={() => setShowCategories(false)}
+                        >
+                            <button className="text-sm font-bold text-gray-800 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+                                Categories
+                                <ChevronDown size={14} className={`transition-transform ${showCategories ? 'rotate-180' : ''}`} />
+                            </button>
+                            <AnimatePresence>
+                                {showCategories && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 8 }}
+                                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-[#D4AF37]/10 overflow-hidden py-2"
+                                    >
+                                        {categoryLinks.map((link) => (
+                                            <Link
+                                                key={link.href}
+                                                href={link.href}
+                                                className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-[#8B0000]/5 hover:text-[#8B0000] transition-colors font-medium"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        ))}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
                     </div>
 
                     {/* Action Buttons / Burger */}
@@ -81,7 +124,7 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Menu - Modern Overlay */}
+                {/* Mobile Menu */}
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
@@ -110,10 +153,32 @@ export default function Navbar() {
                                         </Link>
                                     </motion.div>
                                 ))}
+
+                                {/* Category links in mobile menu */}
+                                <div className="border-t border-gray-100 mt-2 pt-2">
+                                    <p className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] px-4 py-2">Categories</p>
+                                    {categoryLinks.map((link, i) => (
+                                        <motion.div
+                                            key={link.href}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: (navLinks.length + i) * 0.08 }}
+                                        >
+                                            <Link
+                                                href={link.href}
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="flex items-center p-3 px-4 rounded-xl text-base font-medium text-gray-600 hover:bg-[#8B0000]/5 hover:text-[#8B0000] transition-all"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        </motion.div>
+                                    ))}
+                                </div>
+
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4 }}
+                                    transition={{ delay: 0.6 }}
                                     className="mt-4"
                                 >
                                     <Link
